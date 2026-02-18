@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaBars, FaTimes, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa'
+import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -33,14 +33,7 @@ export default function Header() {
         </nav>
 
         {/* Social Links - Desktop */}
-        <div className="hidden md:flex gap-4 items-center">
-          <a 
-            href="/resume.pdf" 
-            download 
-            className="btn btn-primary flex items-center gap-2 text-sm"
-          >
-            <FaDownload size={16} /> Resume
-          </a>
+        <div className="hidden md:flex gap-4">
           <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-blue-400 transition-colors">
             <FaLinkedin size={20} />
           </a>
@@ -68,13 +61,6 @@ export default function Header() {
                 {link}
               </button>
             ))}
-            <a 
-              href="/resume.pdf" 
-              download 
-              className="btn btn-primary flex items-center gap-2 text-sm w-fit"
-            >
-              <FaDownload size={16} /> Download Resume
-            </a>
           </div>
         </div>
       )}

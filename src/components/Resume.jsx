@@ -14,7 +14,7 @@ export default function Resume() {
             </div>
             <a 
               href="/resume.pdf" 
-              download 
+              download="Samuel_Baer_Resume.pdf"
               className="btn btn-primary flex items-center gap-2"
             >
               <FaDownload /> Download PDF

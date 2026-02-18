@@ -6,8 +6,8 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="fade-in">
             <img 
-              src="https://via.placeholder.com/400x400?text=Your+Photo" 
-              alt="About Me" 
+              src="/Sam_Profile.PNG" 
+              alt="Samuel Baer" 
               className="rounded-lg shadow-lg"
             />
           </div>

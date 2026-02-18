@@ -1,6 +1,7 @@
 name: Deploy to GitHub Pages
 
 # Automatic deployment workflow for the portfolio
+on:
   push:
     branches: [ main ]
   pull_request:

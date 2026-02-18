@@ -3,26 +3,26 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 export default function Projects() {
   const projects = [
     {
-      title: "Project One",
-      description: "A brief description of your first project and what you learned.",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
-      github: "https://github.com",
-      live: "https://example.com",
-      image: "https://via.placeholder.com/400x250?text=Project+1"
+      title: "Samuel & Kelcee Wedding Website",
+      description: "A wedding website featuring event details, photo gallery, registry, and RSVP functionality for Samuel and Kelcee's special day.",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+      github: "",
+      live: "https://samuelkelceewedding.info/",
+      image: "https://samuelkelceewedding.info/images/wedding_1.jpg"
     },
     {
-      title: "Project Two",
-      description: "A brief description of your second project and its key features.",
-      technologies: ["Node.js", "Express", "MongoDB"],
-      github: "https://github.com",
-      live: "https://example.com",
-      image: "https://via.placeholder.com/400x250?text=Project+2"
+      title: "USGS Earthquake Catalog",
+      description: "Cross-platform .NET MAUI app that queries the USGS Earthquake API by date range and minimum magnitude, then displays earthquake results to the user.",
+      technologies: ["C#", ".NET MAUI", "XAML", "REST API", "Newtonsoft.Json"],
+      github: "",
+      live: "",
+      image: "https://via.placeholder.com/400x250?text=USGS+Earthquake+Catalog"
     },
     {
       title: "Project Three",
       description: "A brief description of your third project and impact.",
       technologies: ["React", "Python", "APIs"],
-      github: "https://github.com",
+      github: "",
       live: "https://example.com",
       image: "https://via.placeholder.com/400x250?text=Project+3"
     }
@@ -47,12 +47,16 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
-                    <FaGithub /> Code
-                  </a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
-                    <FaExternalLinkAlt /> Live
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
+                      <FaGithub /> Code
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
+                      <FaExternalLinkAlt /> Live
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -62,3 +66,5 @@ export default function Projects() {
     </section>
   )
 }
+
+

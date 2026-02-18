@@ -16,7 +16,7 @@ export default function Projects() {
       technologies: ["C#", ".NET MAUI", "XAML", "REST API", "Newtonsoft.Json"],
       github: "",
       live: "",
-      image: "/usgs_earthquake_hazard_map.v2.jpg"
+      image: `${import.meta.env.BASE_URL}usgs_earthquake_hazard_map.v2.jpg`
     },
     {
       title: "Project Three",

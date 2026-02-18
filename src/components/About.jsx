@@ -6,10 +6,10 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="fade-in">
             <img 
-  src="/Sam_Profile.PNG" 
-  alt="Samuel Baer" 
-  className="rounded-lg shadow-lg"
-/>
+               src={`${import.meta.env.BASE_URL}Sam_Profile.PNG`} 
+               alt="Samuel Baer" 
+               className="rounded-lg shadow-lg"
+            />
           </div>
           <div className="fade-in">
             <p className="text-slate-300 mb-4 leading-relaxed">

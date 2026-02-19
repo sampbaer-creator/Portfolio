@@ -16,7 +16,7 @@ export default function Projects() {
       technologies: ["C#", ".NET MAUI", "XAML", "HttpClient", "OpenWeather API", "Newtonsoft.Json"],
       github: "https://github.com/sampbaer-creator/WeatherControl",
       live: "",
-      image: "https://via.placeholder.com/400x250?text=WeatherControl"
+      image: `${import.meta.env.BASE_URL}Weather.webp`
     },
     {
       title: "MGMT 3345 Final R Project",
@@ -24,7 +24,7 @@ export default function Projects() {
       technologies: ["R", "R Markdown", "Statistics", "Data Visualization"],
       github: "https://github.com/sampbaer-creator/R_Final_Project",
       live: "",
-      image: "https://via.placeholder.com/400x250?text=R+Project"
+      image: `${import.meta.env.BASE_URL}R_photo.webp`
     }
   ]
 

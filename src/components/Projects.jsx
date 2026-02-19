@@ -11,12 +11,12 @@ export default function Projects() {
       image: "https://samuelkelceewedding.info/images/wedding_1.jpg"
     },
     {
-      title: "USGS Earthquake Catalog",
-      description: "Cross-platform .NET MAUI app that queries the USGS Earthquake API by date range and minimum magnitude, then displays earthquake results to the user.",
-      technologies: ["C#", ".NET MAUI", "XAML", "REST API", "Newtonsoft.Json"],
-      github: "https://github.com/sampbaer-creator/EarthQuake",
+      title: "WeatherControl",
+      description: "Cross-platform .NET MAUI weather app that retrieves current conditions by ZIP code or major city and displays temperature and atmospheric details in a clean UI.",
+      technologies: ["C#", ".NET MAUI", "XAML", "HttpClient", "OpenWeather API", "Newtonsoft.Json"],
+      github: "https://github.com/sampbaer-creator/WeatherControl",
       live: "",
-      image: `${import.meta.env.BASE_URL}usgs_earthquake_hazard_map.v2.jpg`
+      image: "https://via.placeholder.com/400x250?text=WeatherControl"
     },
     {
       title: "MGMT 3345 Final R Project",

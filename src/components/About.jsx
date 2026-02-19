@@ -16,7 +16,7 @@ export default function About() {
                     Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights
             </p>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              When I'm not coding, you can find me running trails, staying active with sports, and testing new tech outdoors,
+              When I&apos;m not coding, you can find me running trails, staying active with sports, and testing new tech outdoors,
               all while balancing school and personal projects that sharpen my professional skills.
             </p>
             <div className="space-y-2">

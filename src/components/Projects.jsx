@@ -14,17 +14,17 @@ export default function Projects() {
       title: "USGS Earthquake Catalog",
       description: "Cross-platform .NET MAUI app that queries the USGS Earthquake API by date range and minimum magnitude, then displays earthquake results to the user.",
       technologies: ["C#", ".NET MAUI", "XAML", "REST API", "Newtonsoft.Json"],
-      github: "",
+      github: "https://github.com/sampbaer-creator/EarthQuake",
       live: "",
       image: `${import.meta.env.BASE_URL}usgs_earthquake_hazard_map.v2.jpg`
     },
     {
-      title: "Project Three",
-      description: "A brief description of your third project and impact.",
-      technologies: ["React", "Python", "APIs"],
-      github: "",
-      live: "https://example.com",
-      image: "https://via.placeholder.com/400x250?text=Project+3"
+      title: "MGMT 3345 Final R Project",
+      description: "Business statistics analysis project using R Markdown, including data analysis, visualizations, and a final written report.",
+      technologies: ["R", "R Markdown", "Statistics", "Data Visualization"],
+      github: "https://github.com/sampbaer-creator/R_Final_Project",
+      live: "",
+      image: "https://via.placeholder.com/400x250?text=R+Project"
     }
   ]
 

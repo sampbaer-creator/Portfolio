@@ -27,7 +27,7 @@ npm.cmd install
 npm run dev
 ```
 
-The site will open at `http://localhost:5173`
+
 
 ### Production Build
 

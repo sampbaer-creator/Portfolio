@@ -1,3 +1,5 @@
+import JourneyButton from './JourneyButton'
+
 export default function Explorations() {
   const studies = [
     { title: 'Weather interface study', image: `${import.meta.env.BASE_URL}Weather.webp`, rotate: '-rotate-2' },
@@ -22,6 +24,11 @@ export default function Explorations() {
               <figcaption>{study.title}</figcaption>
             </figure>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="stats" title="Progress In Motion">
+            Continue to stats
+          </JourneyButton>
         </div>
       </div>
     </section>

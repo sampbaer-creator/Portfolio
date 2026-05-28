@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import JourneyButton from './JourneyButton'
 
 export default function Projects() {
   const projects = [
@@ -88,6 +89,11 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="journal" title="Field Notes">
+            Continue to notes
+          </JourneyButton>
         </div>
       </div>
     </section>

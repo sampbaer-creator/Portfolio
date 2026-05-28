@@ -36,18 +36,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+  const scrollToSection = (sectionId, title) => {
+    window.dispatchEvent(new CustomEvent('portfolio:navigate', {
+      detail: {
+        targetId: sectionId,
+        title,
+      },
+    }))
+
     setMenuOpen(false)
   }
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
       <div className={`nav-pill container flex max-w-5xl justify-between items-center py-2 ${scrolled ? 'is-scrolled' : ''}`}>
-        <button onClick={() => scrollToSection('home')} className="logo-mark group" aria-label="Go home">
+        <button onClick={() => scrollToSection('home', 'The Road Opens')} className="logo-mark group" aria-label="Go home">
           <span>SB</span>
         </button>
         
@@ -55,7 +58,7 @@ export default function Header() {
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
-              onClick={() => scrollToSection(link.id)}
+              onClick={() => scrollToSection(link.id, link.label)}
               className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
                 activeSection === link.id
                   ? 'bg-accent/15 text-parchment'
@@ -87,7 +90,7 @@ export default function Header() {
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => scrollToSection(link.id, link.label)}
                 className="rounded-full px-4 py-3 text-left text-parchment/80 hover:bg-accent/10 hover:text-accent transition-colors text-sm"
               >
                 {link.label}

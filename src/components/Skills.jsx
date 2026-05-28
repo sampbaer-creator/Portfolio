@@ -1,3 +1,5 @@
+import JourneyButton from './JourneyButton'
+
 export default function Skills() {
   const skillCategories = [
     {
@@ -39,6 +41,11 @@ export default function Skills() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="projects" title="Selected Work">
+            Continue to work
+          </JourneyButton>
         </div>
       </div>
     </section>

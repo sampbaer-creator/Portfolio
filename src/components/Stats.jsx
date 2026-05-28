@@ -1,3 +1,5 @@
+import JourneyButton from './JourneyButton'
+
 export default function Stats() {
   const stats = [
     { value: '3+', label: 'Portfolio projects' },
@@ -17,6 +19,11 @@ export default function Stats() {
               <p className="mt-3 text-sm uppercase tracking-[0.22em] text-parchment/55">{stat.label}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="resume" title="The Record">
+            Continue to resume
+          </JourneyButton>
         </div>
       </div>
     </section>

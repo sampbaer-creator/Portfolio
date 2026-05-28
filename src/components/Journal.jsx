@@ -1,4 +1,5 @@
 import { FaArrowRight } from 'react-icons/fa'
+import JourneyButton from './JourneyButton'
 
 export default function Journal() {
   const notes = [
@@ -48,6 +49,11 @@ export default function Journal() {
               <FaArrowRight className="text-accent transition-transform duration-300 group-hover:translate-x-1" />
             </article>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="explorations" title="Visual Playground">
+            Continue to explorations
+          </JourneyButton>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { FaDownload } from 'react-icons/fa'
+import JourneyButton from './JourneyButton'
 
 export default function Resume() {
   const skills = ['Python', 'Statistics', 'SQL', 'Excel', 'Azure', 'Critical Thinking', 'Problem Solving', 'Collaboration', 'Curiosity']
@@ -96,6 +97,11 @@ export default function Resume() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center">
+          <JourneyButton targetId="contact" title="The Next Road">
+            Continue to contact
+          </JourneyButton>
         </div>
       </div>
     </section>

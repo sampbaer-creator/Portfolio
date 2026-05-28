@@ -29,6 +29,17 @@ html {
   scroll-behavior: smooth;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(214, 154, 61, 0.8);
+  outline-offset: 4px;
+}
+
 a {
   text-underline-offset: 4px;
 }
@@ -45,6 +56,7 @@ a {
   @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-300;
   border-radius: 999px;
   letter-spacing: 0;
+  min-height: 48px;
 }
 
 .btn-primary {
@@ -67,6 +79,17 @@ a {
   transform: translateY(-2px);
 }
 
+.journey-button {
+  @apply inline-flex items-center gap-3 rounded-full border border-accent/25 bg-primary/45 px-5 py-3 text-sm font-semibold text-parchment/80 transition-all duration-300;
+  box-shadow: inset 0 1px 0 rgba(243, 223, 180, 0.08);
+}
+
+.journey-button:hover {
+  @apply border-accent/60 bg-secondary text-parchment;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28), 0 0 28px rgba(214, 154, 61, 0.12);
+}
+
 .section-title {
   @apply text-4xl md:text-5xl font-bold mb-4 text-center text-parchment;
   font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
@@ -83,7 +106,7 @@ a {
 }
 
 .story-section {
-  @apply relative py-24 overflow-hidden;
+  @apply relative py-24 md:py-28 overflow-hidden;
   scroll-margin-top: 5rem;
 }
 
@@ -95,6 +118,15 @@ a {
   background:
     linear-gradient(90deg, rgba(214, 154, 61, 0.08), transparent 18%, transparent 82%, rgba(160, 71, 29, 0.12)),
     radial-gradient(circle at 18% 12%, rgba(214, 154, 61, 0.12), transparent 20rem);
+}
+
+.story-section::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(214, 154, 61, 0.34), transparent);
 }
 
 .nav-pill {
@@ -218,54 +250,67 @@ a {
   transition: opacity 700ms ease;
 }
 
-.hero-portal.is-entering::before {
-  opacity: 1;
-}
-
-.hero-portal.is-entering > .container,
-.hero-portal.is-entering > .absolute {
-  animation: heroContentYield 680ms ease forwards;
-}
-
-.portal-transition {
+.journey-transition {
   position: fixed;
   inset: 0;
-  z-index: 80;
+  z-index: 90;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.portal-transition__image {
+.journey-transition__image {
   position: absolute;
-  inset: -8%;
+  inset: -10%;
   background:
-    radial-gradient(circle at 50% 52%, rgba(243, 223, 180, 0.04), rgba(16, 15, 11, 0.84) 72%),
+    radial-gradient(circle at 50% 50%, rgba(243, 223, 180, 0.08), rgba(16, 15, 11, 0.82) 72%),
     var(--portal-image) center / cover no-repeat;
   transform: scale(1);
-  filter: saturate(1.2) contrast(1.05);
+  filter: saturate(1.24) contrast(1.08);
 }
 
-.portal-transition__veil {
+.journey-transition__tunnel {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 52%, transparent 0 10rem, rgba(16, 15, 11, 0.16) 22rem, rgba(16, 15, 11, 0.95) 74%),
-    linear-gradient(180deg, rgba(214, 154, 61, 0.08), rgba(16, 15, 11, 0.92));
+    radial-gradient(circle at 50% 50%, transparent 0 9rem, rgba(16, 15, 11, 0.2) 20rem, rgba(16, 15, 11, 0.96) 72%),
+    linear-gradient(180deg, rgba(214, 154, 61, 0.12), rgba(16, 15, 11, 0.96));
 }
 
-.portal-transition__text {
+.journey-transition__content {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.journey-transition__title {
   color: #f3dfb4;
   font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 8vw, 5.5rem);
   line-height: 1;
-  text-align: center;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.74);
   white-space: nowrap;
+}
+
+.journey-transition.is-active {
+  visibility: visible;
+  animation: journeyReveal 1650ms ease forwards;
+}
+
+.journey-transition.is-active .journey-transition__image {
+  animation: journeyImageForward 1650ms cubic-bezier(0.18, 0.82, 0.22, 1) forwards;
+}
+
+.journey-transition.is-active .journey-transition__tunnel {
+  animation: journeyTunnel 1650ms ease forwards;
+}
+
+.journey-transition.is-active .journey-transition__content {
+  animation: journeyText 1650ms ease forwards;
 }
 
 .project-bento {
@@ -333,23 +378,6 @@ a {
 .stat-card {
   @apply border-t border-accent/30 bg-primary/35 p-6 text-center;
   border-radius: 8px;
-}
-
-.hero-portal.is-entering .portal-transition {
-  visibility: visible;
-  animation: portalReveal 1450ms ease forwards;
-}
-
-.hero-portal.is-entering .portal-transition__image {
-  animation: portalImageForward 1450ms cubic-bezier(0.18, 0.82, 0.22, 1) forwards;
-}
-
-.hero-portal.is-entering .portal-transition__veil {
-  animation: portalVeil 1450ms ease forwards;
-}
-
-.hero-portal.is-entering .portal-transition__text {
-  animation: portalText 1450ms ease forwards;
 }
 
 .leaf-drift {
@@ -453,19 +481,12 @@ a {
   }
 }
 
-@keyframes heroContentYield {
-  to {
-    opacity: 0;
-    transform: translateY(-18px) scale(0.98);
-  }
-}
-
-@keyframes portalReveal {
+@keyframes journeyReveal {
   0% {
     opacity: 0;
   }
-  14%,
-  80% {
+  12%,
+  84% {
     opacity: 1;
   }
   100% {
@@ -473,19 +494,19 @@ a {
   }
 }
 
-@keyframes portalImageForward {
+@keyframes journeyImageForward {
   0% {
     transform: scale(1);
   }
-  58% {
-    transform: scale(1.34);
+  55% {
+    transform: scale(1.38);
   }
   100% {
-    transform: scale(1.72);
+    transform: scale(1.78);
   }
 }
 
-@keyframes portalVeil {
+@keyframes journeyTunnel {
   0% {
     opacity: 0;
   }
@@ -497,7 +518,7 @@ a {
   }
 }
 
-@keyframes portalText {
+@keyframes journeyText {
   0% {
     opacity: 0;
     letter-spacing: 0;
@@ -511,6 +532,17 @@ a {
     opacity: 0;
     letter-spacing: 0;
     transform: translate(-50%, -56%) scale(1.06);
+  }
+}
+
+@media (max-width: 640px) {
+  .journal-entry {
+    align-items: flex-start;
+    border-radius: 24px;
+  }
+
+  .journey-transition__title {
+    white-space: normal;
   }
 }
 

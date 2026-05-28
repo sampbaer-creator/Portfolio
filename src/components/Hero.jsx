@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 const ROLES = ['data analyst', 'systems thinker', 'developer', 'builder']
 
 export default function Hero() {
-  const [isEntering, setIsEntering] = useState(false)
   const [roleIndex, setRoleIndex] = useState(0)
 
   useEffect(() => {
@@ -17,35 +16,18 @@ export default function Hero() {
   const enterProjects = (event) => {
     event.preventDefault()
 
-    if (isEntering) {
-      return
-    }
-
-    const projects = document.getElementById('projects')
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    if (prefersReducedMotion) {
-      projects?.scrollIntoView({ behavior: 'auto', block: 'start' })
-      return
-    }
-
-    setIsEntering(true)
-
-    window.setTimeout(() => {
-      if (projects) {
-        projects.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }, 720)
-
-    window.setTimeout(() => {
-      setIsEntering(false)
-    }, 1450)
+    window.dispatchEvent(new CustomEvent('portfolio:navigate', {
+      detail: {
+        targetId: 'projects',
+        title: 'Selected Work',
+      },
+    }))
   }
 
   return (
     <section
       id="home"
-      className={`hero-portal relative min-h-screen overflow-hidden flex items-center justify-center pt-24 ${isEntering ? 'is-entering' : ''}`}
+      className="hero-portal relative min-h-screen overflow-hidden flex items-center justify-center pt-24"
       style={{
         '--portal-image': `url("${import.meta.env.BASE_URL}autumn-forest-hero.png")`,
         backgroundImage: `linear-gradient(180deg, rgba(12, 12, 8, 0.34), rgba(12, 12, 8, 0.76) 64%, #100f0b 100%), url("${import.meta.env.BASE_URL}autumn-forest-hero.png")`,
@@ -74,7 +56,7 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#projects" onClick={enterProjects} className="btn btn-primary">
-            {isEntering ? 'Entering The Path' : 'View My Work'}
+            View My Work
           </a>
           <a href={`${import.meta.env.BASE_URL}resume.pdf`} download="Samuel_Baer_Resume.pdf" className="btn btn-secondary">
             Download Resume
@@ -85,12 +67,6 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent/80 text-sm uppercase tracking-[0.28em]">
         <span>Scroll</span>
         <span className="scroll-line mt-3 block" />
-      </div>
-
-      <div className="portal-transition" aria-hidden="true">
-        <div className="portal-transition__image" />
-        <div className="portal-transition__veil" />
-        <p className="portal-transition__text">Into the work</p>
       </div>
     </section>
   )

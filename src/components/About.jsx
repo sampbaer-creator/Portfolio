@@ -1,3 +1,5 @@
+import JourneyButton from './JourneyButton'
+
 export default function About() {
   return (
     <section id="about" className="story-section bg-primary">
@@ -31,6 +33,11 @@ export default function About() {
               <p className="text-parchment/80"><span className="font-bold text-accent">Looking for:</span> Internship Opportunities</p>
             </div>
           </div>
+        </div>
+        <div className="mt-12 flex justify-center">
+          <JourneyButton targetId="skills" title="Tools For The Journey">
+            Continue to skills
+          </JourneyButton>
         </div>
       </div>
     </section>

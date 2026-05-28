@@ -8,7 +8,9 @@ export default function Projects() {
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
       github: "",
       live: "https://samuelkelceewedding.info/",
-      image: "https://samuelkelceewedding.info/images/wedding_1.jpg"
+      image: "https://samuelkelceewedding.info/images/wedding_1.jpg",
+      span: "md:col-span-7",
+      ratio: "aspect-[4/3]"
     },
     {
       title: "WeatherControl",
@@ -16,7 +18,9 @@ export default function Projects() {
       technologies: ["C#", ".NET MAUI", "XAML", "HttpClient", "OpenWeather API", "Newtonsoft.Json"],
       github: "https://github.com/sampbaer-creator/WeatherControl",
       live: "",
-      image: `${import.meta.env.BASE_URL}Weather.webp`
+      image: `${import.meta.env.BASE_URL}Weather.webp`,
+      span: "md:col-span-5",
+      ratio: "aspect-[3/4]"
     },
     {
       title: "MGMT 3345 Final R Project",
@@ -24,7 +28,19 @@ export default function Projects() {
       technologies: ["R", "R Markdown", "Statistics", "Data Visualization"],
       github: "https://github.com/sampbaer-creator/R_Final_Project",
       live: "",
-      image: `${import.meta.env.BASE_URL}R_photo.webp`
+      image: `${import.meta.env.BASE_URL}R_photo.webp`,
+      span: "md:col-span-5",
+      ratio: "aspect-[3/4]"
+    },
+    {
+      title: "Autumn Story Portfolio",
+      description: "A cinematic single-page portfolio experience with scroll reveals, warm fantasy-inspired styling, and an image portal transition into selected work.",
+      technologies: ["React", "Vite", "Tailwind CSS", "Animation"],
+      github: "https://github.com/sampbaer-creator/Portfolio",
+      live: "https://sampbaer-creator.github.io/Portfolio/",
+      image: `${import.meta.env.BASE_URL}autumn-forest-hero.png`,
+      span: "md:col-span-7",
+      ratio: "aspect-[4/3]"
     }
   ]
 
@@ -37,12 +53,18 @@ export default function Projects() {
         <p className="section-intro">
           Each project is a marker: a real problem, a chosen toolset, and a working result.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="chapter-card reveal overflow-hidden p-0">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover sepia-[0.18] saturate-125" />
+            <div key={index} className={`project-bento group reveal ${project.span}`}>
+              <div className={`relative overflow-hidden ${project.ratio}`}>
+                <img src={project.image} alt={project.title} className="h-full w-full object-cover sepia-[0.18] saturate-125 transition-transform duration-700 group-hover:scale-105" />
+                <div className="halftone-overlay" />
+                <div className="project-hover">
+                  <span>View - <em>{project.title}</em></span>
+                </div>
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 font-serif text-parchment">{project.title}</h3>
+                <h3 className="text-2xl font-bold mb-2 font-serif text-parchment">{project.title}</h3>
                 <p className="text-parchment/75 text-sm mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (

@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['Inter', 'sans-serif'],
+        display: ['Instrument Serif', 'serif'],
+      },
       colors: {
         primary: '#100f0b',
         secondary: '#23190f',

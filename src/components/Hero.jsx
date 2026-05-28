@@ -1,7 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+const ROLES = ['data analyst', 'systems thinker', 'developer', 'builder']
 
 export default function Hero() {
   const [isEntering, setIsEntering] = useState(false)
+  const [roleIndex, setRoleIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setRoleIndex((current) => (current + 1) % ROLES.length)
+    }, 2200)
+
+    return () => window.clearInterval(interval)
+  }, [])
 
   const enterProjects = (event) => {
     event.preventDefault()
@@ -51,10 +62,13 @@ export default function Hero() {
       </div>
 
       <div className="container relative text-center fade-in">
-        <p className="section-kicker">The Road Opens</p>
+        <p className="section-kicker blur-in">Portfolio 2026</p>
         <h1 className="text-5xl md:text-7xl font-bold mb-5 text-parchment font-serif">
           Samuel Baer
         </h1>
+        <p className="mb-5 text-parchment/75">
+          A <span key={roleIndex} className="role-word font-serif italic text-parchment">{ROLES[roleIndex]}</span> based in Provo, Utah.
+        </p>
         <p className="text-lg md:text-xl text-parchment/85 mb-8 max-w-2xl mx-auto leading-relaxed">
           Information systems student and developer building practical tools from data, code, and clear decision-making.
         </p>
@@ -69,7 +83,8 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent/80 text-sm uppercase tracking-[0.28em]">
-        Scroll
+        <span>Scroll</span>
+        <span className="scroll-line mt-3 block" />
       </div>
 
       <div className="portal-transition" aria-hidden="true">

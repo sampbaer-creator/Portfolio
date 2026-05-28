@@ -1,24 +1,86 @@
 import { FaDownload } from 'react-icons/fa'
 import JourneyButton from './JourneyButton'
 
-export default function Resume() {
-  const skills = ['Python', 'Statistics', 'SQL', 'Excel', 'Azure', 'Critical Thinking', 'Problem Solving', 'Collaboration', 'Curiosity']
+const experience = [
+  {
+    company: 'Utah Valley University',
+    location: 'Orem, Utah',
+    role: 'Business Intelligence & Reporting Services Analyst',
+    dates: 'April 2026 - Present',
+    bullets: [
+      'Reduced manual reporting time by 30% through dashboard automation and streamlined reporting workflows.',
+      'Built and maintained 10+ Power BI dashboards using SQL-based datasets supporting analytics initiatives across multiple university departments.',
+      'Improved data consistency and reporting reliability by identifying and correcting data quality issues.',
+    ],
+  },
+  {
+    company: 'Handshake AI',
+    location: 'Remote',
+    role: 'AI Annotator',
+    dates: 'Nov 2025 - Present',
+    bullets: [
+      'Identified behavioral patterns in user-generated data to enhance machine learning training datasets.',
+      'Conducted data validation and quality audits to improve and reduce classification errors.',
+      'Annotated and validated 5,000+ data entries using internal AI tools to improve recommendation model accuracy.',
+    ],
+  },
+  {
+    company: 'TheRooftopLehi',
+    location: 'Lehi, UT',
+    role: 'Venue Coordinator',
+    dates: 'Aug 2023 - October 2025',
+    bullets: [
+      'Trained and onboarded 3 staff members, improving event setup efficiency by 20%.',
+      'Coordinated AV equipment logistics, reducing event setup errors through structured workflow processes.',
+      'Managed scheduling and customer communications for 50+ events, improving event turnaround time by 35%.',
+    ],
+  },
+  {
+    company: 'BYU Sports',
+    location: 'Provo, UT',
+    role: 'Camp Counselor',
+    dates: 'April 2025 - August 2025',
+    bullets: [
+      'Supervised groups of 20+ children during recreational activities both indoors and outdoors.',
+      'Monitored camper behavior to ensure compliance with established guidelines and expectations.',
+    ],
+  },
+]
 
+const skillGroups = [
+  {
+    label: 'Languages & Querying',
+    skills: ['SQL', 'Python', 'R'],
+  },
+  {
+    label: 'Data & BI Tools',
+    skills: ['Power BI', 'Excel', 'Microsoft Azure'],
+  },
+  {
+    label: 'Analytics',
+    skills: ['Statistical Modeling', 'Data Analysis', 'Data Visualization', 'Data Cleaning', 'Reporting & Analytics'],
+  },
+]
+
+export default function Resume() {
   return (
-    <section id="resume" className="story-section bg-secondary/80">
+    <section id="resume" className="story-section bg-secondary/35">
       <div className="story-path" aria-hidden="true" />
-      <div className="container max-w-4xl relative">
-        <p className="section-kicker">Chapter IV</p>
-        <h2 className="section-title">The Record</h2>
+      <div className="container max-w-5xl relative">
+        <p className="section-kicker">Resume</p>
+        <h2 className="section-title">Business Intelligence Record</h2>
         <p className="section-intro">
-          Education, experience, and skills gathered into one readable map.
+          Current resume details focused on analytics, reporting automation, data quality, and business intelligence work.
         </p>
 
-        <div className="story-panel reveal mb-8">
-          <div className="flex flex-col md:flex-row justify-between gap-6 md:items-start mb-8">
+        <div className="resume-sheet reveal mb-8">
+          <div className="resume-header">
             <div>
-              <h3 className="text-2xl font-bold mb-2 font-serif text-parchment">Samuel Baer</h3>
-              <p className="text-parchment/70 text-sm">Sampbaer@gmail.com | (346)-546-5647 | Provo, Utah</p>
+              <p className="text-sm uppercase tracking-[0.26em] text-accent">Samuel Baer</p>
+              <h3 className="mt-2 text-3xl md:text-4xl font-serif text-primary">Information Systems Student</h3>
+              <p className="mt-3 text-sm text-primary/70">
+                Sampbaer@gmail.com | (346)-546-5647 | Provo, Utah | LinkedIn | GitHub
+              </p>
             </div>
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
@@ -29,73 +91,65 @@ export default function Resume() {
             </a>
           </div>
 
-          <div className="space-y-8">
-            <div className="reveal">
-              <h4 className="text-xl font-bold text-accent mb-4 font-serif">Professional Profile</h4>
-              <p className="text-parchment/75 text-sm leading-relaxed">
-                Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights.
-              </p>
+          <div className="resume-grid">
+            <div className="resume-main">
+              <section className="resume-block">
+                <h4>Professional Profile</h4>
+                <p>
+                  Information Systems student with hands-on experience in business intelligence, data analytics, and reporting solutions. Skilled in SQL, Power BI, Excel, Python, and data visualization with experience supporting analytics initiatives, validating datasets, and developing dashboards for organizational decision-making.
+                </p>
+              </section>
+
+              <section className="resume-block">
+                <h4>Experience</h4>
+                <div className="space-y-5">
+                  {experience.map((item) => (
+                    <article key={`${item.company}-${item.role}`} className="resume-role">
+                      <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
+                        <div>
+                          <h5>{item.role}</h5>
+                          <p>{item.company} | {item.location}</p>
+                        </div>
+                        <span>{item.dates}</span>
+                      </div>
+                      <ul>
+                        {item.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </article>
+                  ))}
+                </div>
+              </section>
             </div>
 
-            <div className="reveal">
-              <h4 className="text-xl font-bold text-accent mb-4 font-serif">Education</h4>
-              <div className="border-l-2 border-accent/70 pl-4">
-                <h5 className="font-bold">Bachelor of Science (B.S.) Information Systems</h5>
-                <p className="text-parchment/75 text-sm">Utah Valley University | Orem, Utah</p>
-                <p className="text-parchment/60 text-sm mt-1">Expected graduation: April 2027</p>
-                <p className="text-parchment/60 text-sm mt-2">Relevant coursework: Database Management, Data Analytics, Python Programming, Systems Analysis</p>
-              </div>
-            </div>
+            <aside className="resume-side">
+              <section className="resume-block">
+                <h4>Education</h4>
+                <div className="resume-education">
+                  <h5>Utah Valley University</h5>
+                  <p>Orem, Utah</p>
+                  <p>Bachelor of Science (B.S.) Information Systems</p>
+                  <span>Expected Graduation April 2027</span>
+                </div>
+              </section>
 
-            <div className="reveal">
-              <h4 className="text-xl font-bold text-accent mb-4 font-serif">Experience</h4>
-              <div className="space-y-6 border-l-2 border-accent/70 pl-4">
-                <div>
-                  <h5 className="font-bold">AI Annotator</h5>
-                  <p className="text-parchment/75 text-sm">Handshake AI | Remote | Nov 2025 - Present</p>
-                  <ul className="text-parchment/60 text-sm mt-2 space-y-1 list-disc list-inside">
-                    <li>Analyzed, categorized, and validated user-generated content and behavioral patterns using internal tools</li>
-                    <li>Annotated large datasets to train machine learning models for Handshakes recommendation systems</li>
-                  </ul>
+              <section className="resume-block">
+                <h4>Technical Skills</h4>
+                <div className="space-y-4">
+                  {skillGroups.map((group) => (
+                    <div key={group.label}>
+                      <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-primary/60">{group.label}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {group.skills.map((skill) => (
+                          <span key={skill} className="resume-skill">{skill}</span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h5 className="font-bold">Substitute Teacher</h5>
-                  <p className="text-parchment/75 text-sm">ESS Teacher | Alpine School District | Oct 2025 - Present</p>
-                  <ul className="text-parchment/60 text-sm mt-2 space-y-1 list-disc list-inside">
-                    <li>Maintained a safe, focused classroom culture through effective behavior management and conflict resolution</li>
-                    <li>Executed lesson plans across various grade levels, adapting quickly to ensure educational goals were met</li>
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="font-bold">Venue Coordinator</h5>
-                  <p className="text-parchment/75 text-sm">TheRooftopLehi | Lehi, UT | Aug 2023 - October 2025</p>
-                  <ul className="text-parchment/60 text-sm mt-2 space-y-1 list-disc list-inside">
-                    <li>Trained 3 new staff members in procedures related to venue coordination tasks</li>
-                    <li>Resolved conflicts with customers quickly while maintaining professionalism</li>
-                    <li>Set up audio-visual equipment for events including microphones, speakers, and projectors</li>
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="font-bold">Camp Counselor</h5>
-                  <p className="text-parchment/75 text-sm">BYU Sports | Provo, Utah | April 2025 - August 2025</p>
-                  <ul className="text-parchment/60 text-sm mt-2 space-y-1 list-disc list-inside">
-                    <li>Supervised groups of 20 children during recreational activities both indoors and outdoors</li>
-                    <li>Monitored camper behavior to ensure compliance with established guidelines and expectations</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="reveal">
-              <h4 className="text-xl font-bold text-accent mb-4 font-serif">Skills</h4>
-              <div className="grid grid-cols-2 gap-3">
-                {skills.map((skill) => (
-                  <div key={skill} className="px-3 py-2 bg-moss/70 text-parchment rounded text-sm border border-accent/15">
-                    {skill}
-                  </div>
-                ))}
-              </div>
-            </div>
+              </section>
+            </aside>
           </div>
         </div>
         <div className="flex justify-center">

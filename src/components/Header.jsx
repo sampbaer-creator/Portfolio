@@ -37,8 +37,8 @@ export default function Header({ activeSection }) {
               onClick={() => scrollToSection(link.id, link.label)}
               className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
                 activeSection === link.id
-                  ? 'bg-accent/15 text-parchment'
-                  : 'text-parchment/60 hover:bg-accent/10 hover:text-parchment'
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-primary/60 hover:bg-primary/10 hover:text-primary'
               }`}
             >
               {link.label}
@@ -47,10 +47,10 @@ export default function Header({ activeSection }) {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-parchment transition-colors">
+          <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer" className="text-primary/75 hover:text-secondary transition-colors">
             <FaLinkedin size={20} />
           </a>
-          <a href="https://github.com/sampbaer-creator" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-parchment transition-colors">
+          <a href="https://github.com/sampbaer-creator" target="_blank" rel="noopener noreferrer" className="text-primary/75 hover:text-secondary transition-colors">
             <FaGithub size={20} />
           </a>
         </div>

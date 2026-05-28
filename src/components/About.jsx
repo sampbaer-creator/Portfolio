@@ -19,18 +19,18 @@ export default function About() {
             />
           </div>
           <div className="story-panel reveal">
-            <p className="text-parchment/85 mb-4 leading-relaxed">
+            <p className="text-primary/85 mb-4 leading-relaxed">
               Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights.
             </p>
-            <p className="text-parchment/75 mb-6 leading-relaxed">
+            <p className="text-primary/70 mb-6 leading-relaxed">
               When I&apos;m not coding, you can find me running trails, staying active with sports, and testing new tech outdoors,
               all while balancing school and personal projects that sharpen my professional skills.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
-              <p className="text-parchment/80"><span className="font-bold text-accent">Location:</span> Provo, Utah</p>
-              <p className="text-parchment/80"><span className="font-bold text-accent">Email:</span> Sampbaer@gmail.com</p>
-              <p className="text-parchment/80"><span className="font-bold text-accent">Phone:</span> (346) 546-5647</p>
-              <p className="text-parchment/80"><span className="font-bold text-accent">Looking for:</span> Internship Opportunities</p>
+              <p className="text-primary/80"><span className="font-bold text-secondary">Location:</span> Provo, Utah</p>
+              <p className="text-primary/80"><span className="font-bold text-secondary">Email:</span> Sampbaer@gmail.com</p>
+              <p className="text-primary/80"><span className="font-bold text-secondary">Phone:</span> (346) 546-5647</p>
+              <p className="text-primary/80"><span className="font-bold text-secondary">Looking for:</span> Internship Opportunities</p>
             </div>
           </div>
         </div>

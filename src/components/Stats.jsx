@@ -15,8 +15,8 @@ export default function Stats() {
         <div className="grid gap-5 md:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.label} className="stat-card reveal">
-              <p className="font-serif text-5xl text-parchment">{stat.value}</p>
-              <p className="mt-3 text-sm uppercase tracking-[0.22em] text-parchment/55">{stat.label}</p>
+              <p className="font-serif text-5xl text-primary">{stat.value}</p>
+              <p className="mt-3 text-sm uppercase tracking-[0.22em] text-primary/55">{stat.label}</p>
             </div>
           ))}
         </div>

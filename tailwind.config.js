@@ -11,12 +11,12 @@ export default {
         display: ['Instrument Serif', 'serif'],
       },
       colors: {
-        primary: '#100f0b',
-        secondary: '#23190f',
-        accent: '#d69a3d',
-        ember: '#a0471d',
-        moss: '#3d4a29',
-        parchment: '#f3dfb4',
+        primary: '#063b2b',
+        secondary: '#0f5a3f',
+        accent: '#d8b65a',
+        ember: '#b56a28',
+        moss: '#2f7a4f',
+        parchment: '#f7f0d8',
       }
     },
   },

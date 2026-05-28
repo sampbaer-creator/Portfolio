@@ -65,23 +65,23 @@ export default function Projects() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 font-serif text-parchment">{project.title}</h3>
-                <p className="text-parchment/75 text-sm mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-2 font-serif text-primary">{project.title}</h3>
+                <p className="text-primary/70 text-sm mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 bg-secondary text-parchment/80 rounded border border-accent/15">
+                    <span key={tech} className="text-xs px-2 py-1 bg-secondary/10 text-primary/80 rounded border border-primary/10">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-4">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-parchment transition-colors text-sm">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm">
                       <FaGithub /> Code
                     </a>
                   )}
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-parchment transition-colors text-sm">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm">
                       <FaExternalLinkAlt /> Live
                     </a>
                   )}

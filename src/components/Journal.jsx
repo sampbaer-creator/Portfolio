@@ -43,8 +43,8 @@ export default function Journal() {
             <article key={note.title} className="journal-entry group reveal">
               <img src={note.image} alt="" className="h-16 w-16 rounded-full object-cover" />
               <div className="min-w-0 flex-1">
-                <h3 className="font-serif text-xl text-parchment">{note.title}</h3>
-                <p className="text-sm text-parchment/55">{note.date} / {note.meta}</p>
+                <h3 className="font-serif text-xl text-primary">{note.title}</h3>
+                <p className="text-sm text-primary/55">{note.date} / {note.meta}</p>
               </div>
               <FaArrowRight className="text-accent transition-transform duration-300 group-hover:translate-x-1" />
             </article>

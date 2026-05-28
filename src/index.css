@@ -20,8 +20,9 @@ body {
   @apply bg-primary text-parchment font-sans;
   font-family: "Inter", system-ui, sans-serif;
   background:
-    radial-gradient(circle at 50% 0%, rgba(214, 154, 61, 0.2), transparent 34rem),
-    linear-gradient(180deg, #0c0c08 0%, #161008 44%, #24170e 100%);
+    radial-gradient(circle at 20% 0%, rgba(216, 182, 90, 0.28), transparent 28rem),
+    radial-gradient(circle at 80% 10%, rgba(87, 155, 98, 0.24), transparent 30rem),
+    linear-gradient(180deg, #f7f0d8 0%, #dce9c8 34%, #0b4d35 100%);
   min-width: 320px;
   overflow: hidden;
 }
@@ -37,7 +38,7 @@ a {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid rgba(214, 154, 61, 0.8);
+  outline: 2px solid rgba(216, 182, 90, 0.85);
   outline-offset: 4px;
 }
 
@@ -46,7 +47,7 @@ a {
 }
 
 .accent-gradient {
-  background: linear-gradient(90deg, #d69a3d 0%, #8f3518 52%, #f3dfb4 100%);
+  background: linear-gradient(90deg, #0f5a3f 0%, #d8b65a 48%, #f7f0d8 100%);
 }
 
 .container {
@@ -58,8 +59,8 @@ a {
   min-height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 0%, rgba(214, 154, 61, 0.14), transparent 34rem),
-    #100f0b;
+    linear-gradient(115deg, rgba(247, 240, 216, 0.96), rgba(213, 229, 190, 0.84) 34%, rgba(15, 90, 63, 0.96)),
+    #0a4b34;
 }
 
 .stage-panel {
@@ -67,14 +68,16 @@ a {
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.985);
-  transition: opacity 720ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateY(18px) scale(0.982);
+  filter: saturate(0.92);
+  transition: opacity 760ms ease, transform 980ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 980ms ease;
 }
 
 .stage-panel.is-active {
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1);
+  transform: translateY(0) scale(1);
+  filter: saturate(1);
   z-index: 1;
 }
 
@@ -92,15 +95,15 @@ a {
   height: 0.5rem;
   width: 0.5rem;
   border-radius: 999px;
-  border: 1px solid rgba(214, 154, 61, 0.45);
-  background: rgba(16, 15, 11, 0.72);
+  border: 1px solid rgba(216, 182, 90, 0.55);
+  background: rgba(247, 240, 216, 0.72);
   transition: height 260ms ease, background-color 260ms ease, border-color 260ms ease;
 }
 
 .stage-progress span.is-active {
   height: 1.75rem;
-  border-color: rgba(243, 223, 180, 0.8);
-  background: #d69a3d;
+  border-color: rgba(6, 59, 43, 0.72);
+  background: #d8b65a;
 }
 
 .btn {
@@ -112,7 +115,7 @@ a {
 
 .btn-primary {
   @apply bg-accent text-primary;
-  box-shadow: 0 0 28px rgba(214, 154, 61, 0.24), inset 0 -2px 0 rgba(35, 25, 15, 0.24);
+  box-shadow: 0 12px 34px rgba(6, 59, 43, 0.16), inset 0 -2px 0 rgba(6, 59, 43, 0.18);
 }
 
 .btn-primary:hover {
@@ -121,43 +124,44 @@ a {
 }
 
 .btn-secondary {
-  @apply bg-primary/40 text-parchment border border-accent/50;
-  box-shadow: inset 0 0 0 1px rgba(243, 223, 180, 0.08);
+  @apply bg-parchment/75 text-primary border border-accent/70;
+  box-shadow: inset 0 0 0 1px rgba(6, 59, 43, 0.08);
 }
 
 .btn-secondary:hover {
-  @apply border-parchment text-white bg-secondary/80;
+  @apply border-primary text-parchment bg-primary;
   transform: translateY(-2px);
 }
 
 .journey-button {
-  @apply inline-flex items-center gap-3 rounded-full border border-accent/25 bg-primary/45 px-5 py-3 text-sm font-semibold text-parchment/80 transition-all duration-300;
-  box-shadow: inset 0 1px 0 rgba(243, 223, 180, 0.08);
+  @apply inline-flex items-center gap-3 rounded-full border border-accent/60 bg-parchment/80 px-5 py-3 text-sm font-semibold text-primary transition-all duration-300;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .journey-button:hover {
-  @apply border-accent/60 bg-secondary text-parchment;
+  @apply border-primary bg-primary text-parchment;
   transform: translateY(-2px);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28), 0 0 28px rgba(214, 154, 61, 0.12);
 }
 
 .section-title {
-  @apply text-4xl md:text-5xl font-bold mb-4 text-center text-parchment;
+  @apply text-4xl md:text-5xl font-bold mb-4 text-center text-primary;
   font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
   letter-spacing: 0;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 10px 28px rgba(6, 59, 43, 0.14);
 }
 
 .section-kicker {
-  @apply text-center text-sm uppercase tracking-[0.28em] text-accent mb-3;
+  @apply text-center text-sm uppercase tracking-[0.28em] text-primary/70 mb-3;
 }
 
 .section-intro {
-  @apply max-w-2xl mx-auto text-center text-parchment/75 mb-12 leading-relaxed;
+  @apply max-w-2xl mx-auto text-center text-primary/70 mb-12 leading-relaxed;
 }
 
 .story-section {
   @apply relative overflow-hidden;
+  background: transparent !important;
   min-height: 100vh;
   padding-top: clamp(6.5rem, 12vh, 8.5rem);
   padding-bottom: clamp(3rem, 8vh, 5rem);
@@ -172,8 +176,9 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(214, 154, 61, 0.08), transparent 18%, transparent 82%, rgba(160, 71, 29, 0.12)),
-    radial-gradient(circle at 18% 12%, rgba(214, 154, 61, 0.12), transparent 20rem);
+    linear-gradient(90deg, rgba(6, 59, 43, 0.08), transparent 18%, transparent 82%, rgba(216, 182, 90, 0.16)),
+    radial-gradient(circle at 18% 12%, rgba(216, 182, 90, 0.16), transparent 20rem),
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 22px);
 }
 
 .story-section::after {
@@ -182,23 +187,23 @@ a {
   inset: auto 0 0;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(214, 154, 61, 0.34), transparent);
+  background: linear-gradient(90deg, transparent, rgba(6, 59, 43, 0.34), transparent);
 }
 
 .nav-pill {
-  @apply rounded-full border border-accent/20 bg-primary/70 backdrop-blur-xl;
-  box-shadow: inset 0 1px 0 rgba(243, 223, 180, 0.08);
+  @apply rounded-full border border-primary/15 bg-parchment/75 backdrop-blur-xl;
+  box-shadow: 0 18px 50px rgba(6, 59, 43, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.42);
   transition: box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease;
 }
 
 .nav-pill.is-scrolled {
-  @apply border-accent/35 bg-primary/85;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(243, 223, 180, 0.08);
+  @apply border-primary/25 bg-parchment/90;
+  box-shadow: 0 18px 50px rgba(6, 59, 43, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.52);
 }
 
 .logo-mark {
   @apply relative grid h-10 w-10 place-items-center rounded-full p-[2px];
-  background: linear-gradient(135deg, #d69a3d, #8f3518, #f3dfb4);
+  background: linear-gradient(135deg, #063b2b, #d8b65a, #f7f0d8);
   transition: transform 300ms ease, filter 300ms ease;
 }
 
@@ -208,27 +213,27 @@ a {
 }
 
 .logo-mark span {
-  @apply grid h-full w-full place-items-center rounded-full bg-primary text-sm font-bold text-parchment;
+  @apply grid h-full w-full place-items-center rounded-full bg-parchment text-sm font-bold text-primary;
   font-family: "Instrument Serif", Georgia, serif;
 }
 
 .story-panel {
-  @apply relative border border-accent/25 bg-secondary/70 p-6 md:p-8;
+  @apply relative border border-primary/15 bg-parchment/80 p-6 md:p-8 text-primary;
   border-radius: 8px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(243, 223, 180, 0.08);
+  box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.34);
   backdrop-filter: blur(14px);
 }
 
 .chapter-card {
-  @apply relative border border-accent/20 bg-primary/55 p-6 transition-all duration-500;
+  @apply relative border border-primary/15 bg-parchment/80 p-6 text-primary transition-all duration-500;
   border-radius: 8px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 20px 45px rgba(6, 59, 43, 0.14);
 }
 
 .chapter-card:hover {
   @apply border-accent/60;
   transform: translateY(-6px);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32), 0 0 34px rgba(214, 154, 61, 0.14);
+  box-shadow: 0 28px 70px rgba(6, 59, 43, 0.2), 0 0 34px rgba(216, 182, 90, 0.18);
 }
 
 .story-path {
@@ -245,7 +250,7 @@ a {
   height: 11px;
   transform: translateX(-50%) rotate(45deg);
   border: 1px solid rgba(214, 154, 61, 0.8);
-  background: #23190f;
+  background: #f7f0d8;
 }
 
 .story-path::before {
@@ -301,10 +306,110 @@ a {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 54%, transparent 0 12rem, rgba(12, 12, 8, 0.38) 28rem),
-    linear-gradient(180deg, transparent, rgba(16, 15, 11, 0.72));
-  opacity: 0;
+    radial-gradient(circle at 50% 54%, rgba(247, 240, 216, 0.06) 0 12rem, rgba(6, 59, 43, 0.34) 28rem),
+    linear-gradient(180deg, rgba(6, 59, 43, 0.04), rgba(6, 59, 43, 0.58));
+  opacity: 1;
   transition: opacity 700ms ease;
+}
+
+.resume-sheet {
+  @apply relative overflow-hidden border border-primary/15 bg-parchment/92 p-5 text-primary md:p-7;
+  border-radius: 18px;
+  box-shadow: 0 28px 80px rgba(6, 59, 43, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.resume-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.38), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(6, 59, 43, 0.035) 0 1px, transparent 1px 32px);
+}
+
+.resume-header {
+  @apply relative mb-8 flex flex-col gap-5 border-b border-primary/15 pb-6 md:flex-row md:items-start md:justify-between;
+}
+
+.resume-grid {
+  @apply relative grid gap-8 lg:grid-cols-[1.55fr_0.85fr];
+}
+
+.resume-main,
+.resume-side {
+  @apply space-y-7;
+}
+
+.resume-block h4 {
+  @apply mb-3 text-sm font-bold uppercase tracking-[0.24em] text-secondary;
+}
+
+.resume-block p {
+  @apply text-sm leading-relaxed text-primary/72;
+}
+
+.resume-role {
+  @apply rounded-2xl border border-primary/10 bg-white/30 p-4 transition-all duration-300;
+}
+
+.resume-role:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(6, 59, 43, 0.13);
+}
+
+.resume-role h5,
+.resume-education h5 {
+  @apply font-bold text-primary;
+}
+
+.resume-role p,
+.resume-role span,
+.resume-education p,
+.resume-education span {
+  @apply text-sm text-primary/62;
+}
+
+.resume-role ul {
+  @apply mt-3 space-y-2 text-sm leading-relaxed text-primary/72;
+}
+
+.resume-role li {
+  @apply list-disc ml-5;
+}
+
+.resume-education {
+  @apply rounded-2xl border border-primary/10 bg-white/30 p-4;
+}
+
+.resume-skill {
+  @apply rounded-full border border-primary/10 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary;
+}
+
+.stage-panel.is-active .section-title,
+.stage-panel.is-active .section-intro,
+.stage-panel.is-active .story-panel,
+.stage-panel.is-active .chapter-card,
+.stage-panel.is-active .project-bento,
+.stage-panel.is-active .journal-entry,
+.stage-panel.is-active .exploration-card,
+.stage-panel.is-active .stat-card,
+.stage-panel.is-active .resume-sheet {
+  animation: panelRise 860ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.stage-panel.is-active .section-intro {
+  animation-delay: 90ms;
+}
+
+.stage-panel.is-active .story-panel,
+.stage-panel.is-active .chapter-card,
+.stage-panel.is-active .project-bento,
+.stage-panel.is-active .journal-entry,
+.stage-panel.is-active .exploration-card,
+.stage-panel.is-active .stat-card,
+.stage-panel.is-active .resume-sheet {
+  animation-delay: 150ms;
 }
 
 .journey-transition {
@@ -323,7 +428,7 @@ a {
     radial-gradient(circle at 50% 50%, rgba(243, 223, 180, 0.08), rgba(16, 15, 11, 0.82) 72%),
     var(--portal-image) center / cover no-repeat;
   transform: scale(1);
-  filter: saturate(1.24) contrast(1.08);
+  filter: saturate(1.35) contrast(1.08) hue-rotate(20deg) brightness(1.08);
 }
 
 .journey-transition__tunnel {
@@ -371,15 +476,15 @@ a {
 }
 
 .project-bento {
-  @apply relative overflow-hidden border border-accent/20 bg-secondary/70 transition-all duration-500;
+  @apply relative overflow-hidden border border-primary/15 bg-parchment/85 text-primary transition-all duration-500;
   border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18);
 }
 
 .project-bento:hover {
   @apply border-accent/50;
   transform: translateY(-5px);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36), 0 0 36px rgba(214, 154, 61, 0.12);
+  box-shadow: 0 28px 80px rgba(6, 59, 43, 0.24), 0 0 36px rgba(216, 182, 90, 0.16);
 }
 
 .halftone-overlay {
@@ -392,7 +497,7 @@ a {
 }
 
 .project-hover {
-  @apply absolute inset-0 grid place-items-center bg-primary/70 opacity-0 backdrop-blur-lg transition-opacity duration-500;
+  @apply absolute inset-0 grid place-items-center bg-primary/60 opacity-0 backdrop-blur-lg transition-opacity duration-500;
 }
 
 .project-bento:hover .project-hover {
@@ -405,12 +510,12 @@ a {
 }
 
 .journal-entry {
-  @apply flex items-center gap-5 border border-accent/15 bg-primary/45 p-4 transition-all duration-300;
+  @apply flex items-center gap-5 border border-primary/15 bg-parchment/75 p-4 text-primary transition-all duration-300;
   border-radius: 36px;
 }
 
 .journal-entry:hover {
-  @apply border-accent/45 bg-primary/75;
+  @apply border-primary/35 bg-parchment;
   transform: translateX(6px);
 }
 
@@ -419,9 +524,9 @@ a {
 }
 
 .exploration-card {
-  @apply relative aspect-square overflow-hidden border border-accent/20 bg-secondary transition-transform duration-500;
+  @apply relative aspect-square overflow-hidden border border-primary/15 bg-parchment transition-transform duration-500;
   border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 24px 60px rgba(6, 59, 43, 0.18);
 }
 
 .exploration-card:hover {
@@ -429,11 +534,11 @@ a {
 }
 
 .exploration-card figcaption {
-  @apply absolute bottom-4 left-4 right-4 rounded-full bg-primary/70 px-4 py-2 text-center text-sm text-parchment backdrop-blur-md;
+  @apply absolute bottom-4 left-4 right-4 rounded-full bg-parchment/85 px-4 py-2 text-center text-sm text-primary backdrop-blur-md;
 }
 
 .stat-card {
-  @apply border-t border-accent/30 bg-primary/35 p-6 text-center;
+  @apply border-t border-primary/25 bg-parchment/75 p-6 text-center text-primary;
   border-radius: 8px;
 }
 
@@ -451,7 +556,7 @@ a {
   width: 12px;
   height: 22px;
   border-radius: 75% 0 75% 0;
-  background: linear-gradient(135deg, #d69a3d, #8f3518);
+  background: linear-gradient(135deg, #d8b65a, #2f7a4f);
   opacity: 0.64;
   animation: fallingLeaf 14s linear infinite;
 }
@@ -493,6 +598,17 @@ a {
 }
 
 @keyframes scrollReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);

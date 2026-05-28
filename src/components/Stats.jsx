@@ -2,7 +2,7 @@ import JourneyButton from './JourneyButton'
 
 export default function Stats() {
   const stats = [
-    { value: '3+', label: 'Portfolio projects' },
+    { value: '4', label: 'Featured projects' },
     { value: '2027', label: 'Expected graduation' },
     { value: '100%', label: 'Available for internships' },
   ]
@@ -10,8 +10,8 @@ export default function Stats() {
   return (
     <section id="stats" className="story-section bg-secondary/70">
       <div className="container relative">
-        <p className="section-kicker">Measures</p>
-        <h2 className="section-title">Progress In Motion</h2>
+        <p className="section-kicker">Snapshot</p>
+        <h2 className="section-title">Progress Snapshot</h2>
         <div className="grid gap-5 md:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.label} className="stat-card reveal">
@@ -21,7 +21,7 @@ export default function Stats() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="resume" title="The Record">
+          <JourneyButton targetId="resume" title="Resume">
             Continue to resume
           </JourneyButton>
         </div>

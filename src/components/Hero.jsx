@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const ROLES = ['data analyst', 'systems thinker', 'developer', 'builder']
+const ROLES = ['BI analyst', 'data storyteller', 'systems thinker', 'developer']
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -44,7 +44,7 @@ export default function Hero() {
       </div>
 
       <div className="container relative text-center fade-in">
-        <p className="section-kicker blur-in">Portfolio 2026</p>
+        <p className="hero-kicker blur-in">Information Systems Portfolio</p>
         <h1 className="text-5xl md:text-7xl font-bold mb-5 text-parchment font-serif">
           Samuel Baer
         </h1>
@@ -52,11 +52,11 @@ export default function Hero() {
           A <span key={roleIndex} className="role-word font-serif italic text-parchment">{ROLES[roleIndex]}</span> based in Provo, Utah.
         </p>
         <p className="text-lg md:text-xl text-parchment/85 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Information systems student and developer building practical tools from data, code, and clear decision-making.
+          Turning data, reporting workflows, and software projects into clear tools for better decisions.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#projects" onClick={enterProjects} className="btn btn-primary">
-            View My Work
+            View Selected Work
           </a>
           <a href={`${import.meta.env.BASE_URL}resume.pdf`} download="Samuel_Baer_Resume.pdf" className="btn btn-secondary">
             Download Resume
@@ -65,7 +65,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent/80 text-sm uppercase tracking-[0.28em]">
-        <span>Scroll</span>
+        <span>Explore</span>
         <span className="scroll-line mt-3 block" />
       </div>
     </section>

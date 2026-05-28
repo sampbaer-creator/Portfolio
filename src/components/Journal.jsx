@@ -4,13 +4,13 @@ import JourneyButton from './JourneyButton'
 export default function Journal() {
   const notes = [
     {
-      title: 'The rhythm of useful dashboards',
+      title: 'What makes a dashboard useful',
       meta: '4 min read',
       date: 'Data Notes',
       image: `${import.meta.env.BASE_URL}R_photo.webp`,
     },
     {
-      title: 'Designing tools with less noise',
+      title: 'Designing reports with less noise',
       meta: '3 min read',
       date: 'Systems',
       image: `${import.meta.env.BASE_URL}Weather.webp`,
@@ -22,7 +22,7 @@ export default function Journal() {
       image: `${import.meta.env.BASE_URL}Sam_Profile.PNG`,
     },
     {
-      title: 'Why constraints create better student projects',
+      title: 'Why constraints create better systems',
       meta: '3 min read',
       date: 'Reflection',
       image: `${import.meta.env.BASE_URL}amen-corner-hero.png`,
@@ -35,7 +35,7 @@ export default function Journal() {
         <p className="section-kicker">Field Notes</p>
         <h2 className="section-title">Recent Thoughts</h2>
         <p className="section-intro">
-          Short notes on development, analytics, operations, and the habits behind practical work.
+          Brief reflections on analytics, operations, systems thinking, and building tools people can actually use.
         </p>
 
         <div className="space-y-4">
@@ -51,7 +51,7 @@ export default function Journal() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="explorations" title="Visual Playground">
+          <JourneyButton targetId="explorations" title="Design Studies">
             Continue to explorations
           </JourneyButton>
         </div>

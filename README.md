@@ -1,16 +1,16 @@
 # Samuel Baer Portfolio
 
-A responsive React portfolio for Samuel Baer, built with Vite and Tailwind CSS. The site is styled as a bright green-and-gold professional story experience with staged panels, cinematic movement, project cards, resume details, and contact links.
+A responsive React portfolio for Samuel Baer, built with Vite and Tailwind CSS. The site uses a bright green-and-gold professional visual system, course-inspired imagery, scroll-driven movement, project cards, resume details, and contact links.
 
 ## Highlights
 
 - Bright green-and-gold visual theme inspired by classic golf course polish
-- One-screen staged layout inspired by product-story pages, with each section presented as a viewport panel
+- Product-story inspired scrolling with section transforms and polished motion
 - Resume page content synced with the current PDF resume
-- Site-wide forest portal transition for smooth movement between panels
+- Site-wide course-image transition for smooth movement between major sections
 - Animated loading screen with progress counter and rotating build words
-- Floating active-state navigation with wheel, touch, keyboard, and button panel navigation
-- Chapter-style flow for About, Skills, Projects, Resume, and Contact
+- Floating active-state navigation with smooth section links
+- Professional flow for Profile, Toolkit, Work, Notes, Resume, and Contact
 - Bento-style project grid, journal notes, visual explorations, and progress stats
 - Responsive navigation for desktop and mobile
 - Project showcase with live and GitHub links

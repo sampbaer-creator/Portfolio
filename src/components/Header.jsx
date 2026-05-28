@@ -26,7 +26,7 @@ export default function Header({ activeSection }) {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
       <div className={`nav-pill container flex max-w-5xl justify-between items-center py-2 ${activeSection !== 'home' ? 'is-scrolled' : ''}`}>
-        <button onClick={() => scrollToSection('home', 'The Road Opens')} className="logo-mark group" aria-label="Go home">
+        <button onClick={() => scrollToSection('home', 'Opening Green')} className="logo-mark group" aria-label="Go home">
           <span>SB</span>
         </button>
         

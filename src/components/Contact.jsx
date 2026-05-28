@@ -4,8 +4,8 @@ export default function Contact() {
   return (
     <section id="contact" className="story-section bg-primary">
       <div className="container max-w-2xl relative">
-        <p className="section-kicker">The Next Road</p>
-        <h2 className="section-title">Get In Touch</h2>
+        <p className="section-kicker">Contact</p>
+        <h2 className="section-title">Let&apos;s Connect</h2>
         <p className="section-intro">
           Open to internship opportunities, collaboration, and conversations about useful systems.
         </p>

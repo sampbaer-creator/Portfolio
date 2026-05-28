@@ -153,7 +153,7 @@ export default function Resume() {
           </div>
         </div>
         <div className="flex justify-center">
-          <JourneyButton targetId="contact" title="The Next Road">
+          <JourneyButton targetId="contact" title="Contact">
             Continue to contact
           </JourneyButton>
         </div>

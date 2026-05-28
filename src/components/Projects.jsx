@@ -34,8 +34,8 @@ export default function Projects() {
       ratio: "aspect-[3/4]"
     },
     {
-      title: "Autumn Story Portfolio",
-      description: "A cinematic single-page portfolio experience with scroll reveals, warm fantasy-inspired styling, and an image portal transition into selected work.",
+      title: "Course-Inspired Portfolio",
+      description: "A polished portfolio experience with a green-and-gold visual system, scroll-driven animation, and a professional resume-focused content flow.",
       technologies: ["React", "Vite", "Tailwind CSS", "Animation"],
       github: "https://github.com/sampbaer-creator/Portfolio",
       live: "https://sampbaer-creator.github.io/Portfolio/",
@@ -49,10 +49,10 @@ export default function Projects() {
     <section id="projects" className="story-section bg-primary">
       <div className="story-path" aria-hidden="true" />
       <div className="container relative">
-        <p className="section-kicker">Chapter III</p>
-        <h2 className="section-title">Works Along The Road</h2>
+        <p className="section-kicker">Selected Work</p>
+        <h2 className="section-title">Featured Projects</h2>
         <p className="section-intro">
-          Each project is a marker: a real problem, a chosen toolset, and a working result.
+          A selection of practical builds across web, analytics, statistics, and personal presentation.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
           {projects.map((project, index) => (

@@ -153,6 +153,11 @@ a {
   @apply text-center text-sm uppercase tracking-[0.28em] text-primary/70 mb-3;
 }
 
+.hero-kicker {
+  @apply mb-3 text-center text-sm uppercase tracking-[0.3em] text-accent;
+  text-shadow: 0 12px 32px rgba(6, 59, 43, 0.6);
+}
+
 .section-intro {
   @apply max-w-2xl mx-auto text-center text-primary/70 mb-12 leading-relaxed;
 }
@@ -221,6 +226,19 @@ a {
   border-radius: 8px;
   box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.34);
   backdrop-filter: blur(14px);
+}
+
+.story-panel p {
+  text-wrap: pretty;
+}
+
+.skill-chip {
+  @apply rounded-full border border-primary/10 bg-primary/10 px-3 py-1 text-sm font-medium text-primary transition-all duration-300;
+}
+
+.skill-chip:hover {
+  @apply border-accent/70 bg-accent/30;
+  transform: translateY(-2px);
 }
 
 .chapter-card {
@@ -310,6 +328,10 @@ a {
     linear-gradient(180deg, rgba(6, 59, 43, 0.04), rgba(6, 59, 43, 0.58));
   opacity: 1;
   transition: opacity 700ms ease;
+}
+
+.hero-portal .container {
+  animation: heroTextSettle 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .resume-sheet {
@@ -494,6 +516,12 @@ a {
   box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18);
 }
 
+.project-bento img,
+.exploration-card img,
+.journal-entry img {
+  filter: saturate(1.08) contrast(1.02);
+}
+
 .project-bento:hover {
   @apply border-accent/50;
   transform: translateY(-5px);
@@ -669,6 +697,19 @@ a {
   }
 }
 
+@keyframes heroTextSettle {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 @keyframes fallingLeaf {
   0% {
     transform: translate3d(0, -12vh, 0) rotate(0deg);
@@ -763,6 +804,11 @@ a {
 }
 
 @media (max-width: 640px) {
+  .story-section {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
   .stage-progress {
     bottom: 1rem;
     left: 50%;

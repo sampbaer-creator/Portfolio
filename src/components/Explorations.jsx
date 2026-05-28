@@ -12,9 +12,9 @@ export default function Explorations() {
     <section id="explorations" className="story-section bg-primary">
       <div className="container relative">
         <p className="section-kicker">Explorations</p>
-        <h2 className="section-title">Visual Playground</h2>
+        <h2 className="section-title">Design Studies</h2>
         <p className="section-intro">
-          Small studies and visual fragments that shape the site&apos;s autumn story direction.
+          Visual studies that keep the portfolio polished, calm, and aligned with the course-inspired brand direction.
         </p>
 
         <div className="exploration-grid">
@@ -26,7 +26,7 @@ export default function Explorations() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="stats" title="Progress In Motion">
+          <JourneyButton targetId="stats" title="Progress Snapshot">
             Continue to stats
           </JourneyButton>
         </div>

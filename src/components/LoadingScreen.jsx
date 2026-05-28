@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function LoadingScreen({ onComplete }) {
   const [count, setCount] = useState(0)
-  const words = ['Analyze', 'Build', 'Refine']
+  const words = ['Analyze', 'Report', 'Refine']
   const activeWord = words[Math.min(Math.floor(count / 34), words.length - 1)]
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function LoadingScreen({ onComplete }) {
   return (
     <div className="loading-screen fixed inset-0 z-[9999] bg-primary text-parchment">
       <div className="absolute left-6 top-6 text-xs text-parchment/55 uppercase tracking-[0.3em]">
-        Portfolio
+        Samuel Baer
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
         <p key={activeWord} className="loading-word text-5xl md:text-7xl font-serif italic text-parchment/80">

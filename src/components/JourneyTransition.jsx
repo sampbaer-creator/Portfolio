@@ -10,7 +10,7 @@ export default function JourneyTransition({ active, title }) {
       <div className="journey-transition__image" />
       <div className="journey-transition__tunnel" />
       <div className="journey-transition__content">
-        <p className="text-xs uppercase tracking-[0.35em] text-accent/80">Entering</p>
+        <p className="text-xs uppercase tracking-[0.35em] text-accent/80">Opening</p>
         <p className="journey-transition__title">{title}</p>
       </div>
     </div>

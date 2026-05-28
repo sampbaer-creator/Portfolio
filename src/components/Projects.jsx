@@ -46,7 +46,7 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="story-section bg-primary">
+    <section id="projects" className="story-section">
       <div className="story-path" aria-hidden="true" />
       <div className="container relative">
         <p className="section-kicker">Selected Work</p>
@@ -61,27 +61,27 @@ export default function Projects() {
                 <img src={project.image} alt={project.title} className="h-full w-full object-cover sepia-[0.18] saturate-125 transition-transform duration-700 group-hover:scale-105" />
                 <div className="halftone-overlay" />
                 <div className="project-hover">
-                  <span>View - <em>{project.title}</em></span>
+                  <span>View <em>{project.title}</em></span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 font-serif text-primary">{project.title}</h3>
-                <p className="text-primary/70 text-sm mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-ink">{project.title}</h3>
+                <p className="text-ink/70 text-sm mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 bg-secondary/10 text-primary/80 rounded border border-primary/10">
+                    <span key={tech} className="tech-pill">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-4">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                       <FaGithub /> Code
                     </a>
                   )}
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors text-sm">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
                       <FaExternalLinkAlt /> Live
                     </a>
                   )}

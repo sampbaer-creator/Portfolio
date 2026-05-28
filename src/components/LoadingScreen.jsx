@@ -33,12 +33,12 @@ export default function LoadingScreen({ onComplete }) {
   }, [onComplete])
 
   return (
-    <div className="loading-screen fixed inset-0 z-[9999] bg-primary text-parchment">
-      <div className="absolute left-6 top-6 text-xs text-parchment/55 uppercase tracking-[0.3em]">
+    <div className="loading-screen fixed inset-0 z-[9999]">
+      <div className="absolute left-6 top-6 text-xs text-paper/60 uppercase tracking-[0.3em]">
         Samuel Baer
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <p key={activeWord} className="loading-word text-5xl md:text-7xl font-serif italic text-parchment/80">
+        <p key={activeWord} className="loading-word text-5xl md:text-7xl italic">
           {activeWord}
         </p>
       </div>

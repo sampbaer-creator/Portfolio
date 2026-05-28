@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className="sr-only">
-      <div className="container text-center text-parchment/55 text-sm">
+      <div className="container text-center text-paper/60 text-sm">
         <p>&copy; {currentYear} Samuel. All rights reserved.</p>
         <p className="mt-2">Built with React, Vite & Tailwind CSS</p>
       </div>

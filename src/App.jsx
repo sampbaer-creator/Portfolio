@@ -65,25 +65,30 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => {
-      const current = [...SECTION_IDS].reverse().find((id) => {
-        const section = document.getElementById(id)
-        return section && section.offsetTop - 160 <= window.scrollY
-      })
+    const sections = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
 
-      if (current) {
-        setActiveSection(current)
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+      if (visible?.target?.id) {
+        setActiveSection(visible.target.id)
       }
-    }
+    }, {
+      rootMargin: '-28% 0px -58% 0px',
+      threshold: [0.08, 0.22, 0.45],
+    })
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    sections.forEach((section) => observer.observe(section))
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => observer.disconnect()
   }, [])
 
   return (
-    <div className="story-app min-h-screen bg-primary text-parchment">
+    <div className="story-app min-h-screen bg-paper text-ink">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <JourneyTransition active={journey.active} title={journey.title} />
       <Header activeSection={activeSection} />

@@ -64,7 +64,7 @@ const skillGroups = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="story-section bg-secondary/35">
+    <section id="resume" className="story-section">
       <div className="story-path" aria-hidden="true" />
       <div className="container max-w-5xl relative">
         <p className="section-kicker">Resume</p>

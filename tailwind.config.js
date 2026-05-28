@@ -17,6 +17,10 @@ export default {
         ember: '#b56a28',
         moss: '#2f7a4f',
         parchment: '#f7f0d8',
+        ink: '#11130f',
+        paper: '#f5f1e8',
+        lime: '#b7ff4a',
+        clay: '#d7c7ad',
       }
     },
   },

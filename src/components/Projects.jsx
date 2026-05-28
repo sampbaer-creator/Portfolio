@@ -29,31 +29,36 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-primary">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
+    <section id="projects" className="story-section bg-primary">
+      <div className="story-path" aria-hidden="true" />
+      <div className="container relative">
+        <p className="section-kicker">Chapter III</p>
+        <h2 className="section-title">Works Along The Road</h2>
+        <p className="section-intro">
+          Each project is a marker: a real problem, a chosen toolset, and a working result.
+        </p>
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-secondary rounded-lg overflow-hidden fade-in border border-slate-700 hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+            <div key={index} className="chapter-card reveal overflow-hidden p-0">
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover sepia-[0.18] saturate-125" />
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-slate-300 text-sm mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 font-serif text-parchment">{project.title}</h3>
+                <p className="text-parchment/75 text-sm mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 bg-slate-700 text-slate-300 rounded">
+                    <span key={tech} className="text-xs px-2 py-1 bg-secondary text-parchment/80 rounded border border-accent/15">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-4">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-parchment transition-colors text-sm">
                       <FaGithub /> Code
                     </a>
                   )}
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-parchment transition-colors text-sm">
                       <FaExternalLinkAlt /> Live
                     </a>
                   )}

@@ -15,18 +15,23 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-20 bg-secondary">
-      <div className="container">
-        <h2 className="section-title">Skills</h2>
+    <section id="skills" className="story-section bg-secondary/80">
+      <div className="story-path" aria-hidden="true" />
+      <div className="container relative">
+        <p className="section-kicker">Chapter II</p>
+        <h2 className="section-title">Tools For The Journey</h2>
+        <p className="section-intro">
+          The toolkit is practical: analytics, programming, cloud systems, and the judgment to connect them.
+        </p>
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category) => (
-            <div key={category.title} className="bg-primary p-6 rounded-lg fade-in border border-slate-700 hover:border-accent transition-colors">
-              <h3 className="text-xl font-bold mb-4 text-accent">{category.title}</h3>
+            <div key={category.title} className="chapter-card reveal">
+              <h3 className="text-xl font-bold mb-4 text-accent font-serif">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1 bg-slate-700 text-slate-200 rounded-full text-sm hover:bg-accent hover:text-primary transition-colors"
+                    className="px-3 py-1 bg-moss/70 text-parchment rounded-full text-sm border border-accent/15 hover:bg-accent hover:text-primary transition-colors"
                   >
                     {skill}
                   </span>

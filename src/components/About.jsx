@@ -1,29 +1,34 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-primary">
-      <div className="container">
+    <section id="about" className="story-section bg-primary">
+      <div className="story-path" aria-hidden="true" />
+      <div className="container relative">
+        <p className="section-kicker">Chapter I</p>
         <h2 className="section-title">About Me</h2>
+        <p className="section-intro">
+          A grounded beginning: data, systems, and steady work shaped into useful software.
+        </p>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="fade-in">
+          <div className="reveal">
             <img 
                src={`${import.meta.env.BASE_URL}Sam_Profile.PNG`} 
                alt="Samuel Baer" 
-               className="rounded-lg shadow-lg"
+               className="w-full max-h-[560px] object-cover border border-accent/30 shadow-2xl shadow-black/40"
             />
           </div>
-          <div className="fade-in">
-            <p className="text-slate-300 mb-4 leading-relaxed">
-                    Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights
+          <div className="story-panel reveal">
+            <p className="text-parchment/85 mb-4 leading-relaxed">
+              Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights.
             </p>
-            <p className="text-slate-300 mb-6 leading-relaxed">
+            <p className="text-parchment/75 mb-6 leading-relaxed">
               When I&apos;m not coding, you can find me running trails, staying active with sports, and testing new tech outdoors,
               all while balancing school and personal projects that sharpen my professional skills.
             </p>
-            <div className="space-y-2">
-              <p className="text-slate-300"><span className="font-bold text-accent">Location:</span> Provo, Utah</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Email:</span> Sampbaer@gmail.com</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Phone:</span> (346) 546-5647</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Looking for:</span> Internship Opportunities</p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <p className="text-parchment/80"><span className="font-bold text-accent">Location:</span> Provo, Utah</p>
+              <p className="text-parchment/80"><span className="font-bold text-accent">Email:</span> Sampbaer@gmail.com</p>
+              <p className="text-parchment/80"><span className="font-bold text-accent">Phone:</span> (346) 546-5647</p>
+              <p className="text-parchment/80"><span className="font-bold text-accent">Looking for:</span> Internship Opportunities</p>
             </div>
           </div>
         </div>

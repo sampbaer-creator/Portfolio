@@ -71,6 +71,7 @@ src/
   main.jsx
   index.css
 public/
+  amen-corner-hero.png
   autumn-forest-hero.png
   resume.pdf
   Sam_Profile.PNG

@@ -3,7 +3,7 @@ export default function JourneyTransition({ active, title }) {
     <div
       className={`journey-transition ${active ? 'is-active' : ''}`}
       style={{
-        '--portal-image': `url("${import.meta.env.BASE_URL}autumn-forest-hero.png")`,
+        '--portal-image': `url("${import.meta.env.BASE_URL}amen-corner-hero.png")`,
       }}
       aria-hidden="true"
     >

@@ -29,8 +29,8 @@ export default function Hero() {
       id="home"
       className="hero-portal relative min-h-screen overflow-hidden flex items-center justify-center pt-24"
       style={{
-        '--portal-image': `url("${import.meta.env.BASE_URL}autumn-forest-hero.png")`,
-        backgroundImage: `linear-gradient(180deg, rgba(12, 12, 8, 0.34), rgba(12, 12, 8, 0.76) 64%, #100f0b 100%), url("${import.meta.env.BASE_URL}autumn-forest-hero.png")`,
+        '--portal-image': `url("${import.meta.env.BASE_URL}amen-corner-hero.png")`,
+        backgroundImage: `linear-gradient(180deg, rgba(6, 59, 43, 0.12), rgba(6, 59, 43, 0.58) 64%, rgba(6, 59, 43, 0.9) 100%), url("${import.meta.env.BASE_URL}amen-corner-hero.png")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

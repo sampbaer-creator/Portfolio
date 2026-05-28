@@ -25,7 +25,7 @@ export default function Journal() {
       title: 'Why constraints create better student projects',
       meta: '3 min read',
       date: 'Reflection',
-      image: `${import.meta.env.BASE_URL}autumn-forest-hero.png`,
+      image: `${import.meta.env.BASE_URL}amen-corner-hero.png`,
     },
   ]
 

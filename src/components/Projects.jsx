@@ -39,7 +39,7 @@ export default function Projects() {
       technologies: ["React", "Vite", "Tailwind CSS", "Animation"],
       github: "https://github.com/sampbaer-creator/Portfolio",
       live: "https://sampbaer-creator.github.io/Portfolio/",
-      image: `${import.meta.env.BASE_URL}autumn-forest-hero.png`,
+      image: `${import.meta.env.BASE_URL}amen-corner-hero.png`,
       span: "md:col-span-7",
       ratio: "aspect-[4/3]"
     }

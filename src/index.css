@@ -191,7 +191,7 @@ a {
 }
 
 .nav-pill {
-  @apply rounded-full border border-primary/15 bg-parchment/75 backdrop-blur-xl;
+  @apply rounded-full border border-primary/20 bg-parchment/75 backdrop-blur-xl;
   box-shadow: 0 18px 50px rgba(6, 59, 43, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.42);
   transition: box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease;
 }
@@ -218,14 +218,14 @@ a {
 }
 
 .story-panel {
-  @apply relative border border-primary/15 bg-parchment/80 p-6 md:p-8 text-primary;
+  @apply relative border border-primary/20 bg-parchment/80 p-6 md:p-8 text-primary;
   border-radius: 8px;
   box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.34);
   backdrop-filter: blur(14px);
 }
 
 .chapter-card {
-  @apply relative border border-primary/15 bg-parchment/80 p-6 text-primary transition-all duration-500;
+  @apply relative border border-primary/20 bg-parchment/80 p-6 text-primary transition-all duration-500;
   border-radius: 8px;
   box-shadow: 0 20px 45px rgba(6, 59, 43, 0.14);
 }
@@ -313,7 +313,7 @@ a {
 }
 
 .resume-sheet {
-  @apply relative overflow-hidden border border-primary/15 bg-parchment/92 p-5 text-primary md:p-7;
+  @apply relative overflow-hidden border border-primary/20 bg-parchment/90 p-5 text-primary md:p-7;
   border-radius: 18px;
   box-shadow: 0 28px 80px rgba(6, 59, 43, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.48);
 }
@@ -329,7 +329,7 @@ a {
 }
 
 .resume-header {
-  @apply relative mb-8 flex flex-col gap-5 border-b border-primary/15 pb-6 md:flex-row md:items-start md:justify-between;
+  @apply relative mb-8 flex flex-col gap-5 border-b border-primary/20 pb-6 md:flex-row md:items-start md:justify-between;
 }
 
 .resume-grid {
@@ -346,7 +346,7 @@ a {
 }
 
 .resume-block p {
-  @apply text-sm leading-relaxed text-primary/72;
+  @apply text-sm leading-relaxed text-primary/70;
 }
 
 .resume-role {
@@ -367,11 +367,11 @@ a {
 .resume-role span,
 .resume-education p,
 .resume-education span {
-  @apply text-sm text-primary/62;
+  @apply text-sm text-primary/60;
 }
 
 .resume-role ul {
-  @apply mt-3 space-y-2 text-sm leading-relaxed text-primary/72;
+  @apply mt-3 space-y-2 text-sm leading-relaxed text-primary/70;
 }
 
 .resume-role li {
@@ -476,7 +476,7 @@ a {
 }
 
 .project-bento {
-  @apply relative overflow-hidden border border-primary/15 bg-parchment/85 text-primary transition-all duration-500;
+  @apply relative overflow-hidden border border-primary/20 bg-parchment/80 text-primary transition-all duration-500;
   border-radius: 24px;
   box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18);
 }
@@ -510,12 +510,12 @@ a {
 }
 
 .journal-entry {
-  @apply flex items-center gap-5 border border-primary/15 bg-parchment/75 p-4 text-primary transition-all duration-300;
+  @apply flex items-center gap-5 border border-primary/20 bg-parchment/75 p-4 text-primary transition-all duration-300;
   border-radius: 36px;
 }
 
 .journal-entry:hover {
-  @apply border-primary/35 bg-parchment;
+  @apply border-primary/40 bg-parchment;
   transform: translateX(6px);
 }
 
@@ -524,7 +524,7 @@ a {
 }
 
 .exploration-card {
-  @apply relative aspect-square overflow-hidden border border-primary/15 bg-parchment transition-transform duration-500;
+  @apply relative aspect-square overflow-hidden border border-primary/20 bg-parchment transition-transform duration-500;
   border-radius: 24px;
   box-shadow: 0 24px 60px rgba(6, 59, 43, 0.18);
 }
@@ -534,7 +534,7 @@ a {
 }
 
 .exploration-card figcaption {
-  @apply absolute bottom-4 left-4 right-4 rounded-full bg-parchment/85 px-4 py-2 text-center text-sm text-primary backdrop-blur-md;
+  @apply absolute bottom-4 left-4 right-4 rounded-full bg-parchment/80 px-4 py-2 text-center text-sm text-primary backdrop-blur-md;
 }
 
 .stat-card {

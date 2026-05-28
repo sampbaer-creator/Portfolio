@@ -4,8 +4,6 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
-import Journal from './components/Journal'
-import Explorations from './components/Explorations'
 import Stats from './components/Stats'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
@@ -18,8 +16,6 @@ const SECTION_IDS = [
   'about',
   'skills',
   'projects',
-  'journal',
-  'explorations',
   'stats',
   'resume',
   'contact',
@@ -96,8 +92,6 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <Journal />
-        <Explorations />
         <Stats />
         <Resume />
         <Contact />

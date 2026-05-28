@@ -412,8 +412,6 @@ a {
 .story-panel,
 .chapter-card,
 .project-bento,
-.journal-entry,
-.exploration-card,
 .stat-card,
 .resume-sheet {
   animation: panelRise both;
@@ -436,8 +434,6 @@ a {
   }
 
   .project-bento,
-  .journal-entry,
-  .exploration-card,
   .stat-card,
   .resume-role {
     animation: cardFloat both;
@@ -515,9 +511,7 @@ a {
   box-shadow: 0 24px 70px rgba(6, 59, 43, 0.18);
 }
 
-.project-bento img,
-.exploration-card img,
-.journal-entry img {
+.project-bento img {
   filter: saturate(1.08) contrast(1.02);
 }
 
@@ -547,34 +541,6 @@ a {
 .project-hover span {
   @apply rounded-full bg-parchment px-5 py-3 text-sm font-semibold text-primary;
   box-shadow: 0 0 0 2px rgba(214, 154, 61, 0.65), 0 18px 40px rgba(0, 0, 0, 0.32);
-}
-
-.journal-entry {
-  @apply flex items-center gap-5 border border-primary/20 bg-parchment/75 p-4 text-primary transition-all duration-300;
-  border-radius: 36px;
-}
-
-.journal-entry:hover {
-  @apply border-primary/40 bg-parchment;
-  transform: translateX(6px);
-}
-
-.exploration-grid {
-  @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4;
-}
-
-.exploration-card {
-  @apply relative aspect-square overflow-hidden border border-primary/20 bg-parchment transition-transform duration-500;
-  border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(6, 59, 43, 0.18);
-}
-
-.exploration-card:hover {
-  transform: rotate(0deg) scale(1.03);
-}
-
-.exploration-card figcaption {
-  @apply absolute bottom-4 left-4 right-4 rounded-full bg-parchment/90 px-4 py-2 text-center text-sm text-primary;
 }
 
 .stat-card {
@@ -823,11 +789,6 @@ a {
   .stage-progress span.is-active {
     height: 0.45rem;
     width: 1.5rem;
-  }
-
-  .journal-entry {
-    align-items: flex-start;
-    border-radius: 24px;
   }
 
   .journey-transition__title {

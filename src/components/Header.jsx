@@ -4,7 +4,6 @@ import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 const NAV_LINKS = [
   { label: 'Home', id: 'home' },
   { label: 'Work', id: 'projects' },
-  { label: 'Journal', id: 'journal' },
   { label: 'Resume', id: 'resume' },
   { label: 'Contact', id: 'contact' },
 ]

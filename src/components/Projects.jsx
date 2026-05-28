@@ -91,8 +91,8 @@ export default function Projects() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="journal" title="Field Notes">
-            Continue to notes
+          <JourneyButton targetId="stats" title="Progress Snapshot">
+            Continue to stats
           </JourneyButton>
         </div>
       </div>

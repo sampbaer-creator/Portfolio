@@ -36,6 +36,9 @@ export default function Contact() {
             </a>
           </div>
         </div>
+        <p className="mt-10 text-center text-sm text-parchment/45">
+          &copy; {new Date().getFullYear()} Samuel Baer. Built with React, Vite, and Tailwind CSS.
+        </p>
       </div>
     </section>
   )

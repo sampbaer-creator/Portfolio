@@ -5,9 +5,10 @@ A responsive React portfolio for Samuel Baer, built with Vite and Tailwind CSS. 
 ## Highlights
 
 - Autumn forest hero with warm high-fantasy inspired styling
-- Site-wide forest portal transition for smooth movement between main sections
+- One-screen staged layout inspired by product-story pages, with each section presented as a viewport panel
+- Site-wide forest portal transition for smooth movement between panels
 - Animated loading screen with progress counter and rotating build words
-- Floating active-state navigation with smooth section scrolling
+- Floating active-state navigation with wheel, touch, keyboard, and button panel navigation
 - Chapter-style flow for About, Skills, Projects, Resume, and Contact
 - Bento-style project grid, journal notes, visual explorations, and progress stats
 - Responsive navigation for desktop and mobile

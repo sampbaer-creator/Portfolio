@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 const NAV_LINKS = [
@@ -9,32 +9,8 @@ const NAV_LINKS = [
   { label: 'Contact', id: 'contact' },
 ]
 
-export default function Header() {
+export default function Header({ activeSection }) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const sectionIds = NAV_LINKS.map((link) => link.id)
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100)
-
-      const current = [...sectionIds].reverse().find((id) => {
-        const section = document.getElementById(id)
-        return section && section.offsetTop - 140 <= window.scrollY
-      })
-
-      if (current) {
-        setActiveSection(current)
-      }
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const scrollToSection = (sectionId, title) => {
     window.dispatchEvent(new CustomEvent('portfolio:navigate', {
@@ -49,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
-      <div className={`nav-pill container flex max-w-5xl justify-between items-center py-2 ${scrolled ? 'is-scrolled' : ''}`}>
+      <div className={`nav-pill container flex max-w-5xl justify-between items-center py-2 ${activeSection !== 'home' ? 'is-scrolled' : ''}`}>
         <button onClick={() => scrollToSection('home', 'The Road Opens')} className="logo-mark group" aria-label="Go home">
           <span>SB</span>
         </button>

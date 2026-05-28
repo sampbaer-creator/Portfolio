@@ -23,6 +23,7 @@ body {
     radial-gradient(circle at 50% 0%, rgba(214, 154, 61, 0.2), transparent 34rem),
     linear-gradient(180deg, #0c0c08 0%, #161008 44%, #24170e 100%);
   min-width: 320px;
+  overflow: hidden;
 }
 
 html {
@@ -50,6 +51,56 @@ a {
 
 .container {
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.stage-viewport {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(214, 154, 61, 0.14), transparent 34rem),
+    #100f0b;
+}
+
+.stage-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.985);
+  transition: opacity 720ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stage-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.stage-progress {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  z-index: 55;
+  display: grid;
+  gap: 0.65rem;
+  transform: translateY(-50%);
+}
+
+.stage-progress span {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 154, 61, 0.45);
+  background: rgba(16, 15, 11, 0.72);
+  transition: height 260ms ease, background-color 260ms ease, border-color 260ms ease;
+}
+
+.stage-progress span.is-active {
+  height: 1.75rem;
+  border-color: rgba(243, 223, 180, 0.8);
+  background: #d69a3d;
 }
 
 .btn {
@@ -106,7 +157,12 @@ a {
 }
 
 .story-section {
-  @apply relative py-24 md:py-28 overflow-hidden;
+  @apply relative overflow-hidden;
+  min-height: 100vh;
+  padding-top: clamp(6.5rem, 12vh, 8.5rem);
+  padding-bottom: clamp(3rem, 8vh, 5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   scroll-margin-top: 5rem;
 }
 
@@ -236,6 +292,7 @@ a {
 
 .hero-portal {
   isolation: isolate;
+  min-height: 100vh;
 }
 
 .hero-portal::before {
@@ -536,6 +593,25 @@ a {
 }
 
 @media (max-width: 640px) {
+  .stage-progress {
+    bottom: 1rem;
+    left: 50%;
+    right: auto;
+    top: auto;
+    grid-auto-flow: column;
+    transform: translateX(-50%);
+  }
+
+  .stage-progress span {
+    height: 0.45rem;
+    width: 0.45rem;
+  }
+
+  .stage-progress span.is-active {
+    height: 0.45rem;
+    width: 1.5rem;
+  }
+
   .journal-entry {
     align-items: flex-start;
     border-radius: 24px;

@@ -1,76 +1,100 @@
-# Samuel's Portfolio
+# Samuel Baer Portfolio
 
-A modern, responsive portfolio website showcasing projects and resume for internship job applications.
+A responsive React portfolio for Samuel Baer, built with Vite and Tailwind CSS. The site is styled as an autumn story journey with a cinematic forest opening, chapter-based sections, project cards, resume details, and contact links.
 
-## Features
+## Highlights
 
-- ✨ Modern, responsive design
-- 🎨 Beautiful UI with Tailwind CSS
-- 📱 Mobile-friendly navigation
-- 📁 Projects showcase with links
-- 📄 Resume/CV section with download
-- 📧 Contact form
-- 🔗 Social media links
-- ⚡ Built with React + Vite for lightning-fast performance
+- Autumn forest hero with warm high-fantasy inspired styling
+- "View My Work" portal transition that zooms into the hero image before moving to projects
+- Chapter-style flow for About, Skills, Projects, Resume, and Contact
+- Responsive navigation for desktop and mobile
+- Project showcase with live and GitHub links
+- Resume section with PDF download
+- GitHub Pages compatible base path through Vite
 
-## Quick Start
-
-### Installation
-
-```bash
-npm.cmd install
-```
-
-### Development Server
-
-```bash
-npm run dev
-```
-
-
-
-### Production Build
-
-```bash
-npm run build
-```
-
-## Customization
-
-Replace placeholder text and images in the components with your own information:
-
-1. **Personal Info** - Update in `Hero.jsx` and `About.jsx`
-2. **Projects** - Add your projects in `Projects.jsx`
-3. **Skills** - Update in `Skills.jsx`
-4. **Resume** - Update in `Resume.jsx` and create a PDF in `/public/resume.pdf`
-5. **Contact** - Update links in `Contact.jsx` and integrate with EmailJS or Formspree
-6. **Social Links** - Update LinkedIn and GitHub URLs in `Header.jsx`
-
-## File Structure
-
-```
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── Hero.jsx
-│   ├── About.jsx
-│   ├── Skills.jsx
-│   ├── Projects.jsx
-│   ├── Resume.jsx
-│   ├── Contact.jsx
-│   └── Footer.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
-## Technologies
+## Tech Stack
 
 - React 18
 - Vite
 - Tailwind CSS
 - React Icons
 
-## License
+## Quick Start
 
-This project is open source and available under the MIT License.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+  components/
+    Header.jsx
+    Hero.jsx
+    About.jsx
+    Skills.jsx
+    Projects.jsx
+    Resume.jsx
+    Contact.jsx
+    Footer.jsx
+  App.jsx
+  main.jsx
+  index.css
+public/
+  autumn-forest-hero.png
+  resume.pdf
+  Sam_Profile.PNG
+  Weather.webp
+  R_photo.webp
+```
+
+## Customization
+
+- Hero content and portal transition: `src/components/Hero.jsx`
+- Global styling, animations, and story sections: `src/index.css`
+- Theme colors: `tailwind.config.js`
+- Projects: `src/components/Projects.jsx`
+- Resume content and PDF link: `src/components/Resume.jsx`
+- Contact and social links: `src/components/Contact.jsx` and `src/components/Header.jsx`
+
+## Deployment
+
+The Vite config uses:
+
+```js
+base: '/Portfolio/'
+```
+
+This supports deployment to GitHub Pages at:
+
+```text
+https://sampbaer-creator.github.io/Portfolio/
+```
+
+Deploy with:
+
+```bash
+npm run build
+npm run deploy
+```

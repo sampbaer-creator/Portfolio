@@ -29,6 +29,16 @@ body {
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+body,
+#root {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto !important;
 }
 
 button,
@@ -56,6 +66,7 @@ a {
 
 .stage-viewport {
   position: relative;
+  display: block;
   min-height: 100vh;
   overflow: visible;
   background:
@@ -146,12 +157,12 @@ a {
 }
 
 .story-section {
-  @apply relative overflow-hidden;
+  @apply relative;
   background: transparent !important;
   min-height: 100svh;
   padding-top: clamp(6.5rem, 12vh, 8.5rem);
   padding-bottom: clamp(3rem, 8vh, 5rem);
-  overflow-y: visible;
+  overflow: visible;
   overscroll-behavior: contain;
   scroll-margin-top: 5rem;
 }

@@ -34,7 +34,6 @@ function App() {
   })
 
   useEffect(() => {
-    let scrollTimer
     let resetTimer
 
     const handleJourney = (event) => {
@@ -46,7 +45,6 @@ function App() {
         return
       }
 
-      window.clearTimeout(scrollTimer)
       window.clearTimeout(resetTimer)
 
       if (prefersReducedMotion) {
@@ -55,21 +53,17 @@ function App() {
       }
 
       setJourney({ active: true, title })
-
-      scrollTimer = window.setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 720)
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
       resetTimer = window.setTimeout(() => {
         setJourney({ active: false, title: '' })
-      }, 1650)
+      }, 1100)
     }
 
     window.addEventListener('portfolio:navigate', handleJourney)
 
     return () => {
       window.removeEventListener('portfolio:navigate', handleJourney)
-      window.clearTimeout(scrollTimer)
       window.clearTimeout(resetTimer)
     }
   }, [])

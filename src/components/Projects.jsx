@@ -25,9 +25,9 @@ export default function Projects() {
       ratio: "aspect-[3/4]"
     },
     {
-      title: "MGMT 3345 Final R Project",
-      description: "Business statistics analysis project using R Markdown, including data analysis, visualizations, and a final written report.",
-      technologies: ["R", "R Markdown", "Statistics", "Data Visualization"],
+      title: "UVU Women Impact Lab Analysis",
+      description: "Service-learning analysis applying multivariate statistics, regression modeling, and hypothesis testing to Likert-scale survey data, delivered as a client-ready R Markdown notebook.",
+      technologies: ["R", "R Markdown", "Regression", "Data Visualization"],
       github: "https://github.com/sampbaer-creator/R_Final_Project",
       live: "",
       image: `${import.meta.env.BASE_URL}R_photo.webp`,

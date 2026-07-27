@@ -1,4 +1,4 @@
-import { FaDownload } from 'react-icons/fa'
+import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa'
 import JourneyButton from './JourneyButton'
 
 const experience = [
@@ -8,8 +8,9 @@ const experience = [
     role: 'Business Intelligence & Reporting Services Analyst',
     dates: 'April 2026 - Present',
     bullets: [
-      'Reduced manual reporting time by 30% through dashboard automation and streamlined reporting workflows.',
-      'Built and maintained 10+ Power BI dashboards using SQL-based datasets supporting analytics initiatives across multiple university departments.',
+      'Build and maintain 7+ Power BI reports using Azure SQL Database data to support reporting needs across 10 UVU departments.',
+      'Maintain UVU’s SRI systems and data, investigate reported issues, and respond to department requests.',
+      'Developed a five-year Top Courses report identifying the top 30 general education courses and top 50 courses overall.',
     ],
   },
   {
@@ -32,29 +33,24 @@ const experience = [
       'Managed scheduling and customer communications for 50+ events, improving event turnaround time by 35%.',
     ],
   },
-  {
-    company: 'BYU Sports',
-    location: 'Provo, UT',
-    role: 'Camp Counselor',
-    dates: 'April 2025 - August 2025',
-    bullets: [
-      'Supervised groups of 20+ children during recreational activities both indoors and outdoors.',
-    ],
-  },
 ]
 
 const skillGroups = [
   {
     label: 'Languages & Querying',
-    skills: ['SQL', 'Python', 'R'],
+    skills: ['Python', 'SQL', 'R', 'C#', 'PHP', 'HTML', 'CSS'],
   },
   {
     label: 'Data & BI Tools',
-    skills: ['Power BI', 'Excel', 'Microsoft Azure'],
+    skills: ['Power BI', 'Excel', 'Microsoft Azure', 'Azure Cosmos DB'],
   },
   {
     label: 'Analytics',
     skills: ['Statistical Modeling', 'Data Analysis', 'Data Visualization', 'Data Cleaning', 'Reporting & Analytics'],
+  },
+  {
+    label: 'Development Tools',
+    skills: ['GitHub', '.NET MAUI', 'R Markdown', 'Tailwind CSS'],
   },
 ]
 
@@ -75,16 +71,26 @@ export default function Resume() {
               <p className="text-sm uppercase tracking-[0.26em] text-accent">Samuel Baer</p>
               <h3 className="mt-2 text-3xl md:text-4xl font-serif text-primary">Information Systems Student</h3>
               <p className="mt-3 text-sm text-primary/70">
-                Sampbaer@gmail.com | (346)-546-5647 | Provo, Utah | LinkedIn | GitHub
+                Sampbaer@gmail.com | (346) 546-5647 | Pleasant Grove, Utah | LinkedIn | GitHub
               </p>
             </div>
-            <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download="Samuel_Baer_Resume.pdf"
-              className="btn btn-primary flex items-center gap-2"
-            >
-              <FaDownload /> Download PDF
-            </a>
+            <div className="resume-actions">
+              <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary flex items-center gap-2"
+              >
+                <FaExternalLinkAlt /> View resume
+              </a>
+              <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                download="Resume_Samuel_Baer.pdf"
+                className="btn btn-primary flex items-center gap-2"
+              >
+                <FaDownload /> Download PDF
+              </a>
+            </div>
           </div>
 
           <div className="resume-grid">
@@ -92,7 +98,7 @@ export default function Resume() {
               <section className="resume-block">
                 <h4>Professional Profile</h4>
                 <p>
-                  Information Systems student with hands-on experience in business intelligence, data analytics, and reporting solutions. Skilled in SQL, Power BI, Excel, Python, and data visualization with experience supporting analytics initiatives, validating datasets, and developing dashboards for organizational decision-making.
+                  Information Systems student with applied experience in statistical modeling, data pipelines, and analytics, targeting data science roles in finance and healthcare. Skilled in Python, SQL, and R, with hands-on work building BI dashboards, improving data quality, and annotating machine learning datasets.
                 </p>
               </section>
 

@@ -56,7 +56,7 @@ export default function Header({ activeSection }) {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer" className="text-ink/70 hover:text-lime transition-colors">
+          <a href="https://linkedin.com/in/samuel-p-baer" target="_blank" rel="noopener noreferrer" className="text-ink/70 hover:text-lime transition-colors">
             <FaLinkedin size={20} />
           </a>
           <a href="https://github.com/sampbaer-creator" target="_blank" rel="noopener noreferrer" className="text-ink/70 hover:text-lime transition-colors">

@@ -1,112 +1,60 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import JourneyButton from './JourneyButton'
-import { motion } from 'motion/react'
+import { FaArrowRight } from 'react-icons/fa'
+
+const projects = [
+  {
+    title: 'UVU Women Impact Lab Analysis',
+    description: 'A client-ready statistical analysis using regression, hypothesis testing, visualization, and R Markdown to explore Likert-scale survey data.',
+    stack: ['R', 'R Markdown', 'Regression'],
+    image: 'R_photo.webp',
+    url: 'https://github.com/sampbaer-creator/R_Final_Project',
+  },
+  {
+    title: 'WeatherControl',
+    description: 'A cross-platform .NET MAUI application that retrieves live weather conditions and presents temperature and atmospheric details in a focused interface.',
+    stack: ['C#', '.NET MAUI', 'REST API'],
+    image: 'Weather.webp',
+    url: 'https://github.com/sampbaer-creator/WeatherControl',
+  },
+  {
+    title: 'Samuel & Kelcee',
+    description: 'A complete wedding website with event details, imagery, registry information, and an RSVP workflow.',
+    stack: ['PHP', 'JavaScript', 'Tailwind CSS'],
+    image: 'amen-corner-hero.png',
+    url: 'https://samuelkelceewedding.info/',
+  },
+]
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Samuel & Kelcee Wedding Website",
-      description: "A wedding website featuring event details, photo gallery, registry, and RSVP functionality for Samuel and Kelcee's special day.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-      github: "",
-      live: "https://samuelkelceewedding.info/",
-      image: "https://samuelkelceewedding.info/images/wedding_1.jpg",
-      span: "md:col-span-7",
-      ratio: "aspect-[4/3]"
-    },
-    {
-      title: "WeatherControl",
-      description: "Cross-platform .NET MAUI weather app that retrieves current conditions by ZIP code or major city and displays temperature and atmospheric details in a clean UI.",
-      technologies: ["C#", ".NET MAUI", "XAML", "HttpClient", "OpenWeather API", "Newtonsoft.Json"],
-      github: "https://github.com/sampbaer-creator/WeatherControl",
-      live: "",
-      image: `${import.meta.env.BASE_URL}Weather.webp`,
-      span: "md:col-span-5",
-      ratio: "aspect-[3/4]"
-    },
-    {
-      title: "UVU Women Impact Lab Analysis",
-      description: "Service-learning analysis applying multivariate statistics, regression modeling, and hypothesis testing to Likert-scale survey data, delivered as a client-ready R Markdown notebook.",
-      technologies: ["R", "R Markdown", "Regression", "Data Visualization"],
-      github: "https://github.com/sampbaer-creator/R_Final_Project",
-      live: "",
-      image: `${import.meta.env.BASE_URL}R_photo.webp`,
-      span: "md:col-span-5",
-      ratio: "aspect-[3/4]"
-    },
-    {
-      title: "Course-Inspired Portfolio",
-      description: "A polished portfolio experience with a green-and-gold visual system, scroll-driven animation, and a professional resume-focused content flow.",
-      technologies: ["React", "Vite", "Tailwind CSS", "Animation"],
-      github: "https://github.com/sampbaer-creator/Portfolio",
-      live: "https://sampbaer-creator.github.io/Portfolio/",
-      image: `${import.meta.env.BASE_URL}amen-corner-hero.png`,
-      span: "md:col-span-7",
-      ratio: "aspect-[4/3]"
-    }
-  ]
-
   return (
-    <section id="projects" className="story-section">
-      <div className="story-path" aria-hidden="true" />
-      <div className="container relative">
-        <p className="section-kicker">Selected Work</p>
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="section-intro">
-          A selection of practical builds across web, analytics, statistics, and personal presentation.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
+    <section id="projects" className="section projects-section">
+      <div className="site-shell">
+        <p className="section-label">Representative projects</p>
+        <h2>Practical work, built for real outcomes.</h2>
+        <div className="projects-list">
           {projects.map((project, index) => (
-            <motion.article
-              key={index}
-              className={`project-bento group ${project.span}`}
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.18 }}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.55, delay: index * 0.06 }}
-            >
-              <div className={`relative overflow-hidden ${project.ratio}`}>
-                <img src={project.image} alt={project.title} className="h-full w-full object-cover sepia-[0.18] saturate-125 transition-transform duration-700 group-hover:scale-105" />
-                <div className="halftone-overlay" />
-                <div className="project-hover">
-                  <span>View <em>{project.title}</em></span>
+            <article className="project-row" key={project.title}>
+              <div className="project-copy">
+                <span className="project-number">0{index + 1}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="project-stack">
+                  <strong>Tech stack:</strong>
+                  {project.stack.map((item) => <span key={item}>{item}</span>)}
                 </div>
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  View project <FaArrowRight />
+                </a>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-ink">{project.title}</h3>
-                <p className="text-ink/70 text-sm mb-4 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="tech-pill">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FaGithub /> Code
-                    </a>
-                  )}
-                  {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FaExternalLinkAlt /> Live
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.article>
+              <a href={project.url} target="_blank" rel="noreferrer" className="project-image">
+                <img src={`${import.meta.env.BASE_URL}${project.image}`} alt="" />
+              </a>
+            </article>
           ))}
         </div>
-        <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="stats" title="Progress Snapshot">
-            Continue to stats
-          </JourneyButton>
-        </div>
+        <a className="all-projects" href="https://github.com/sampbaer-creator?tab=repositories" target="_blank" rel="noreferrer">
+          See all projects <FaArrowRight />
+        </a>
       </div>
     </section>
   )
 }
-
-

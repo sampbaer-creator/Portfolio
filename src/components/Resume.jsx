@@ -155,8 +155,8 @@ export default function Resume() {
           </div>
         </div>
         <div className="flex justify-center">
-          <JourneyButton targetId="contact" title="Contact">
-            Continue to contact
+          <JourneyButton targetId="projects" title="Selected Work">
+            Continue to projects
           </JourneyButton>
         </div>
       </div>

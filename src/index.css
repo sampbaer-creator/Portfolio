@@ -908,3 +908,311 @@ button:focus-visible {
     transform: none;
   }
 }
+
+/* Clear portfolio structure inspired by Albert Arakelyan's section hierarchy */
+body {
+  background: #fbfaf7;
+  color: var(--green);
+}
+
+.story-app {
+  color: var(--green);
+}
+
+.story-app::before {
+  display: none;
+}
+
+header.fixed {
+  padding: 0;
+  background: rgba(6, 47, 43, 0.97);
+  box-shadow: 0 1px 0 rgba(248, 242, 223, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.nav-pill,
+.nav-pill.is-scrolled {
+  min-height: 5.5rem;
+  max-width: 80rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.nav-pill nav button {
+  color: rgba(248, 242, 223, 0.72);
+  font-weight: 700;
+}
+
+.nav-pill nav button:hover,
+.nav-pill nav button.bg-ink {
+  background: transparent !important;
+  color: var(--accent) !important;
+}
+
+.logo-mark {
+  border-color: var(--accent);
+}
+
+.mobile-menu {
+  top: 5rem;
+  background: rgba(6, 47, 43, 0.98);
+}
+
+.hero-portal {
+  padding-top: 5.5rem;
+  background:
+    linear-gradient(
+      90deg,
+      #fbfaf7 0%,
+      #fbfaf7 45%,
+      rgba(251, 250, 247, 0.96) 51%,
+      rgba(251, 250, 247, 0.12) 68%,
+      transparent 100%
+    );
+}
+
+.hero-portal .container {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.hero-copy {
+  width: 100%;
+  max-width: 42rem;
+  padding-bottom: 0;
+}
+
+.hero-kicker {
+  color: var(--teal);
+}
+
+.hero-kicker span {
+  border-color: rgba(1, 62, 55, 0.35);
+}
+
+.hero-title {
+  max-width: 10ch;
+  color: var(--green);
+  font-size: clamp(4rem, 7vw, 7.2rem);
+  line-height: 0.88;
+}
+
+.hero-role {
+  color: var(--green);
+}
+
+.role-word {
+  color: var(--teal);
+  border-color: var(--gold);
+}
+
+.hero-summary {
+  color: rgba(6, 47, 43, 0.74);
+}
+
+.hero-meta {
+  color: rgba(6, 47, 43, 0.56);
+}
+
+.hero-portal .btn-primary {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--cream);
+}
+
+.hero-portal .btn-secondary {
+  border-color: rgba(1, 62, 55, 0.45);
+  background: rgba(248, 242, 223, 0.72);
+  color: var(--green);
+}
+
+.story-section,
+.story-section:nth-of-type(even) {
+  min-height: auto;
+  padding-block: clamp(6rem, 10vw, 9rem);
+  background: #fbfaf7;
+  color: var(--green);
+}
+
+.story-section:nth-of-type(even) {
+  background: #eff4ef;
+}
+
+.story-section::before,
+.story-section::after,
+.story-path {
+  display: none;
+}
+
+.section-kicker {
+  color: var(--teal);
+}
+
+.section-title {
+  max-width: 14ch;
+  color: var(--green);
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+}
+
+.section-intro {
+  color: rgba(6, 47, 43, 0.68);
+}
+
+.story-panel,
+.chapter-card,
+.project-bento,
+.resume-sheet,
+.stats-strip,
+.contact-grid {
+  border-color: rgba(1, 62, 55, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--green);
+  box-shadow: 0 20px 55px rgba(6, 47, 43, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.story-panel p,
+.project-bento p,
+.resume-header h3,
+.resume-header p,
+.resume-block p,
+.resume-role p,
+.resume-role span {
+  color: rgba(6, 47, 43, 0.72) !important;
+}
+
+.detail-grid,
+.resume-header,
+.resume-side,
+.resume-block + .resume-block,
+.stat-card + .stat-card,
+.contact-grid > div {
+  border-color: rgba(1, 62, 55, 0.12);
+}
+
+.profile-image {
+  box-shadow: 0 24px 60px rgba(6, 47, 43, 0.12);
+}
+
+.skill-layout {
+  gap: 1.25rem;
+}
+
+.chapter-card {
+  min-height: 19rem;
+  border-top: 4px solid var(--gold);
+}
+
+.chapter-card:nth-child(2) {
+  border-top-color: var(--teal);
+}
+
+.chapter-card:nth-child(3) {
+  border-top-color: var(--sage);
+}
+
+.chapter-card:hover {
+  background: white;
+  color: var(--green);
+}
+
+.chapter-index {
+  margin-bottom: 3.4rem;
+  color: var(--teal);
+}
+
+.skill-chip {
+  align-items: center;
+  gap: 0.42rem;
+  border-color: rgba(1, 62, 55, 0.16);
+  background: #eff4ef;
+  color: var(--green);
+}
+
+.skill-chip svg {
+  font-size: 0.9rem;
+  color: var(--teal);
+}
+
+.project-bento {
+  background: white;
+}
+
+.project-link {
+  color: var(--teal);
+}
+
+.project-hover {
+  background: rgba(6, 47, 43, 0.54);
+}
+
+.stat-card p:first-child {
+  color: var(--green) !important;
+}
+
+.resume-side {
+  background: #eff4ef;
+}
+
+.resume-block h4,
+.resume-block h5 {
+  color: var(--green);
+}
+
+.resume-block p,
+.resume-role li {
+  color: rgba(6, 47, 43, 0.72) !important;
+}
+
+.resume-skill,
+.tech-pill {
+  color: var(--green);
+}
+
+.story-section .btn-primary {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--cream);
+}
+
+.story-section .btn-secondary {
+  border-color: rgba(1, 62, 55, 0.35);
+  background: transparent;
+  color: var(--green);
+}
+
+.contact-grid > div:hover {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.stage-progress {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero-portal {
+    background: rgba(251, 250, 247, 0.9);
+  }
+
+  .hero-portal .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 46rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(3.6rem, 17vw, 5.6rem);
+  }
+
+  .story-section,
+  .story-section:nth-of-type(even) {
+    padding-block: 5.5rem;
+  }
+}

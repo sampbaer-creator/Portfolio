@@ -10,7 +10,6 @@ const experience = [
     bullets: [
       'Reduced manual reporting time by 30% through dashboard automation and streamlined reporting workflows.',
       'Built and maintained 10+ Power BI dashboards using SQL-based datasets supporting analytics initiatives across multiple university departments.',
-      'Improved data consistency and reporting reliability by identifying and correcting data quality issues.',
     ],
   },
   {
@@ -19,7 +18,6 @@ const experience = [
     role: 'AI Annotator',
     dates: 'Nov 2025 - Present',
     bullets: [
-      'Identified behavioral patterns in user-generated data to enhance machine learning training datasets.',
       'Conducted data validation and quality audits to improve and reduce classification errors.',
       'Annotated and validated 5,000+ data entries using internal AI tools to improve recommendation model accuracy.',
     ],
@@ -31,7 +29,6 @@ const experience = [
     dates: 'Aug 2023 - October 2025',
     bullets: [
       'Trained and onboarded 3 staff members, improving event setup efficiency by 20%.',
-      'Coordinated AV equipment logistics, reducing event setup errors through structured workflow processes.',
       'Managed scheduling and customer communications for 50+ events, improving event turnaround time by 35%.',
     ],
   },
@@ -42,7 +39,6 @@ const experience = [
     dates: 'April 2025 - August 2025',
     bullets: [
       'Supervised groups of 20+ children during recreational activities both indoors and outdoors.',
-      'Monitored camper behavior to ensure compliance with established guidelines and expectations.',
     ],
   },
 ]

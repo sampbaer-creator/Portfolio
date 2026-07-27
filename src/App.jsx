@@ -9,7 +9,7 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
-import JourneyTransition from './components/JourneyTransition'
+import CinematicCanvas from './components/CinematicCanvas'
 
 const SECTION_IDS = [
   'home',
@@ -24,16 +24,9 @@ const SECTION_IDS = [
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [activeSection, setActiveSection] = useState('home')
-  const [journey, setJourney] = useState({
-    active: false,
-    title: '',
-  })
-
   useEffect(() => {
-    let resetTimer
-
     const handleJourney = (event) => {
-      const { targetId, title } = event.detail
+      const { targetId } = event.detail
       const target = document.getElementById(targetId)
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -41,26 +34,16 @@ function App() {
         return
       }
 
-      window.clearTimeout(resetTimer)
-
-      if (prefersReducedMotion) {
-        target.scrollIntoView({ behavior: 'auto', block: 'start' })
-        return
-      }
-
-      setJourney({ active: true, title })
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-
-      resetTimer = window.setTimeout(() => {
-        setJourney({ active: false, title: '' })
-      }, 1100)
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
     }
 
     window.addEventListener('portfolio:navigate', handleJourney)
 
     return () => {
       window.removeEventListener('portfolio:navigate', handleJourney)
-      window.clearTimeout(resetTimer)
     }
   }, [])
 
@@ -88,9 +71,9 @@ function App() {
   }, [])
 
   return (
-    <div className="story-app min-h-screen bg-paper text-ink">
+    <div id="story-root" className="story-app min-h-screen bg-paper text-ink">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <JourneyTransition active={journey.active} title={journey.title} />
+      <CinematicCanvas />
       <Header activeSection={activeSection} />
       <main className="stage-viewport">
         <Hero />

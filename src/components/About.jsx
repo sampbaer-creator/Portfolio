@@ -2,7 +2,7 @@ import JourneyButton from './JourneyButton'
 
 export default function About() {
   return (
-    <section id="about" className="story-section bg-primary">
+    <section id="about" className="story-section">
       <div className="story-path" aria-hidden="true" />
       <div className="container relative">
         <p className="section-kicker">Profile</p>

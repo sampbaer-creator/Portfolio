@@ -1,5 +1,6 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import JourneyButton from './JourneyButton'
+import { motion } from 'motion/react'
 
 export default function Projects() {
   const projects = [
@@ -56,7 +57,15 @@ export default function Projects() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
           {projects.map((project, index) => (
-            <div key={index} className={`project-bento group reveal ${project.span}`}>
+            <motion.article
+              key={index}
+              className={`project-bento group ${project.span}`}
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.18 }}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
+            >
               <div className={`relative overflow-hidden ${project.ratio}`}>
                 <img src={project.image} alt={project.title} className="h-full w-full object-cover sepia-[0.18] saturate-125 transition-transform duration-700 group-hover:scale-105" />
                 <div className="halftone-overlay" />
@@ -87,7 +96,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.article>
           ))}
         </div>
         <div className="mt-12 flex justify-center">

@@ -1,59 +1,70 @@
 import { useEffect, useState } from 'react'
+import { animate } from 'animejs'
+import PropTypes from 'prop-types'
 
 export default function LoadingScreen({ onComplete }) {
   const [count, setCount] = useState(0)
-  const words = ['Analyze', 'Report', 'Refine']
-  const activeWord = words[Math.min(Math.floor(count / 34), words.length - 1)]
 
   useEffect(() => {
-    const duration = 2300
-    const start = performance.now()
-    let frameId
-    let finishId
+    const state = { value: 4 }
+    let finished = false
+    const image = new Image()
+    image.src = `${import.meta.env.BASE_URL}story/tee-off.png`
 
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
+    const intro = animate(state, {
+      value: 72,
+      duration: 900,
+      ease: 'out(3)',
+      onUpdate: () => setCount(Math.round(state.value)),
+    })
 
-      setCount(Math.round(eased * 100))
-
-      if (progress < 1) {
-        frameId = requestAnimationFrame(tick)
-      } else {
-        finishId = window.setTimeout(onComplete, 420)
-      }
+    const complete = () => {
+      if (finished) return
+      finished = true
+      intro.pause()
+      animate(state, {
+        value: 100,
+        duration: 420,
+        ease: 'out(4)',
+        onUpdate: () => setCount(Math.round(state.value)),
+        onComplete: () => window.setTimeout(onComplete, 180),
+      })
     }
 
-    frameId = requestAnimationFrame(tick)
+    image.onload = complete
+    image.onerror = complete
+    if (image.complete) complete()
 
     return () => {
-      cancelAnimationFrame(frameId)
-      window.clearTimeout(finishId)
+      intro.revert()
+      image.onload = null
+      image.onerror = null
     }
   }, [onComplete])
 
   return (
     <div className="loading-screen fixed inset-0 z-[9999]">
-      <div className="absolute left-6 top-6 text-xs text-paper/60 uppercase tracking-[0.3em]">
-        Samuel Baer
+      <div className="loader-brand">
+        <span>SB</span>
+        <p>Samuel Baer</p>
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <p key={activeWord} className="loading-word text-5xl md:text-7xl italic">
-          {activeWord}
-        </p>
+        <div className="loader-orbit" aria-hidden="true"><i /><i /><i /></div>
+        <p className="loading-word">Building the journey</p>
       </div>
-      <div className="absolute bottom-10 right-6 text-6xl md:text-8xl font-serif tabular-nums">
+      <div className="loader-count">
         {String(count).padStart(3, '0')}
       </div>
-      <div className="absolute bottom-0 left-0 h-[3px] w-full bg-accent/10">
+      <div className="loader-track">
         <div
-          className="h-full accent-gradient origin-left"
-          style={{
-            transform: `scaleX(${count / 100})`,
-            boxShadow: '0 0 12px rgba(214, 154, 61, 0.42)',
-          }}
+          className="loader-fill"
+          style={{ transform: `scaleX(${count / 100})` }}
         />
       </div>
     </div>
   )
+}
+
+LoadingScreen.propTypes = {
+  onComplete: PropTypes.func.isRequired,
 }

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export default function JourneyButton({ targetId, title, children }) {
   const handleClick = (event) => {
     event.preventDefault()
@@ -16,4 +18,10 @@ export default function JourneyButton({ targetId, title, children }) {
       <span aria-hidden="true">-&gt;</span>
     </a>
   )
+}
+
+JourneyButton.propTypes = {
+  targetId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 }

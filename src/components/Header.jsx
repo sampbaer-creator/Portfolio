@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react'
+import PropTypes from 'prop-types'
 
 const NAV_LINKS = [
   { label: 'Home', id: 'home' },
@@ -10,6 +12,8 @@ const NAV_LINKS = [
 
 export default function Header({ activeSection }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { scrollYProgress } = useScroll()
+  const navScale = useTransform(scrollYProgress, [0, 0.08], [1, 0.97])
 
   const scrollToSection = (sectionId, title) => {
     window.dispatchEvent(new CustomEvent('portfolio:navigate', {
@@ -23,7 +27,13 @@ export default function Header({ activeSection }) {
   }
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6">
+    <motion.header
+      className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-4 md:pt-6"
+      initial={{ y: -28, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      style={{ scale: navScale }}
+    >
       <div className={`nav-pill container flex max-w-6xl justify-between items-center py-2 ${activeSection !== 'home' ? 'is-scrolled' : ''}`}>
         <button onClick={() => scrollToSection('home', 'Home')} className="logo-mark group" aria-label="Go home">
           <span>SB</span>
@@ -59,8 +69,15 @@ export default function Header({ activeSection }) {
         </button>
       </div>
 
+      <AnimatePresence>
       {menuOpen && (
-        <div className="absolute left-4 right-4 top-20 md:hidden rounded-[22px] border border-ink/10 bg-paper/95 p-4 shadow-2xl backdrop-blur-xl">
+        <motion.div
+          className="mobile-menu"
+          initial={{ opacity: 0, y: -12, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -8, scale: 0.98 }}
+          transition={{ duration: 0.25 }}
+        >
           <div className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => (
               <button
@@ -72,8 +89,13 @@ export default function Header({ activeSection }) {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
-    </header>
+      </AnimatePresence>
+    </motion.header>
   )
+}
+
+Header.propTypes = {
+  activeSection: PropTypes.string.isRequired,
 }

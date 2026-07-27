@@ -4,9 +4,10 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react'
 import PropTypes from 'prop-types'
 
 const NAV_LINKS = [
-  { label: 'Home', id: 'home' },
-  { label: 'Work', id: 'projects' },
-  { label: 'Resume', id: 'resume' },
+  { label: 'About', id: 'about' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Experience', id: 'resume' },
+  { label: 'Projects', id: 'projects' },
   { label: 'Contact', id: 'contact' },
 ]
 

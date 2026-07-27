@@ -16,9 +16,9 @@ const SECTION_IDS = [
   'home',
   'about',
   'skills',
+  'resume',
   'projects',
   'stats',
-  'resume',
   'contact',
 ]
 
@@ -82,9 +82,9 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Resume />
         <Projects />
         <Stats />
-        <Resume />
         <Contact />
       </main>
       <div className="stage-progress" aria-hidden="true">

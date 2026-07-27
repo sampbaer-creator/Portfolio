@@ -1,18 +1,44 @@
 import JourneyButton from './JourneyButton'
+import {
+  SiDotnet,
+  SiGithub,
+  SiPhp,
+  SiPython,
+  SiR,
+  SiTailwindcss,
+} from 'react-icons/si'
+import { FaChartBar, FaCloud, FaCode, FaDatabase, FaFileExcel } from 'react-icons/fa'
 
 export default function Skills() {
   const skillCategories = [
     {
       title: "Data Analytics & BI",
-      skills: ["Data Analytics", "Power BI", "Excel", "Statistics", "Data Visualization"]
+      skills: [
+        { name: "Power BI", icon: FaChartBar },
+        { name: "Excel", icon: FaFileExcel },
+        { name: "Statistics", icon: FaDatabase },
+        { name: "Data Visualization", icon: FaDatabase },
+      ]
     },
     {
       title: "Programming Languages",
-      skills: ["SQL", "Python", "R", "C#"]
+      skills: [
+        { name: "SQL", icon: FaDatabase },
+        { name: "Python", icon: SiPython },
+        { name: "R", icon: SiR },
+        { name: "C#", icon: FaCode },
+        { name: "PHP", icon: SiPhp },
+      ]
     },
     {
       title: "Systems & Workflow",
-      skills: ["Azure", "Database Management", "Systems Analysis", "Data Cleaning", "Reporting"]
+      skills: [
+        { name: "Azure", icon: FaCloud },
+        { name: ".NET MAUI", icon: SiDotnet },
+        { name: "GitHub", icon: SiGithub },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "Data Cleaning", icon: FaDatabase },
+      ]
     }
   ]
 
@@ -31,21 +57,24 @@ export default function Skills() {
               <span className="chapter-index">0{index + 1}</span>
               <h3 className="text-xl font-bold mb-4 text-ink">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
+                {category.skills.map((skill) => {
+                  const Icon = skill.icon
+                  return (
                   <span 
-                    key={skill}
+                    key={skill.name}
                     className="skill-chip"
                   >
-                    {skill}
+                    <Icon aria-hidden="true" /> {skill.name}
                   </span>
-                ))}
+                  )
+                })}
               </div>
             </div>
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <JourneyButton targetId="projects" title="Selected Work">
-            Continue to work
+          <JourneyButton targetId="resume" title="Experience">
+            Continue to experience
           </JourneyButton>
         </div>
       </div>

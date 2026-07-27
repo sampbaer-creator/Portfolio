@@ -63,6 +63,26 @@ button:focus-visible {
   width: 100vw;
   height: 100vh;
   background: var(--green);
+  transition: opacity 300ms ease;
+}
+
+.cinematic-canvas.is-hidden {
+  opacity: 0;
+}
+
+.webgl-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(rgba(1, 62, 55, 0.18), rgba(1, 62, 55, 0.54)),
+    url("/Portfolio/story/tee-off.png") center / cover no-repeat;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.webgl-fallback.is-visible {
+  opacity: 1;
 }
 
 .story-app::before {

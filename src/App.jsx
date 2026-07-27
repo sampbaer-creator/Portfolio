@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,7 +9,8 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
-import CinematicCanvas from './components/CinematicCanvas'
+
+const CinematicCanvas = lazy(() => import('./components/CinematicCanvas'))
 
 const SECTION_IDS = [
   'home',
@@ -73,7 +74,9 @@ function App() {
   return (
     <div id="story-root" className="story-app min-h-screen bg-paper text-ink">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <CinematicCanvas />
+      <Suspense fallback={<div className="webgl-fallback is-visible" aria-hidden="true" />}>
+        <CinematicCanvas />
+      </Suspense>
       <Header activeSection={activeSection} />
       <main className="stage-viewport">
         <Hero />

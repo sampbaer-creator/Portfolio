@@ -25,7 +25,7 @@ export default function Contact() {
           </div>
           <div>
             <FaLinkedin />
-            <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/samuel-p-baer" target="_blank" rel="noopener noreferrer">
               LinkedIn Profile
             </a>
           </div>

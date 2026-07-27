@@ -6,7 +6,9 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { animate, onScroll } from 'animejs'
 
 const CREAM = new THREE.Color('#ffefb3')
-const GREEN = new THREE.Color('#013e37')
+const NIGHT = new THREE.Color('#062f2b')
+const GOLD = new THREE.Color('#d8ba6a')
+const SAGE = new THREE.Color('#9db9a9')
 const clamp = (value) => Math.min(1, Math.max(0, value))
 
 function makePanel(width, height, opacity = 0.18) {
@@ -37,8 +39,8 @@ function addPanelCluster(world, z, flip = false) {
     const bar = new THREE.Mesh(
       new THREE.BoxGeometry(0.5, 0.5 + index * 0.4, 0.25),
       new THREE.MeshStandardMaterial({
-        color: CREAM,
-        emissive: CREAM,
+        color: GOLD,
+        emissive: GOLD,
         emissiveIntensity: 0.08,
         transparent: true,
         opacity: 0.52,
@@ -57,7 +59,7 @@ function addPanelCluster(world, z, flip = false) {
   ]
   const line = new THREE.Line(
     new THREE.BufferGeometry().setFromPoints(linePoints),
-    new THREE.LineBasicMaterial({ color: CREAM, transparent: true, opacity: 0.78 }),
+      new THREE.LineBasicMaterial({ color: SAGE, transparent: true, opacity: 0.78 }),
   )
   group.add(line)
   world.add(group)
@@ -152,7 +154,7 @@ function addLandscape(world) {
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(180, 180, 24, 24),
     new THREE.MeshStandardMaterial({
-      color: GREEN,
+      color: NIGHT,
       roughness: 0.82,
       metalness: 0.08,
     }),
@@ -172,8 +174,8 @@ function addLandscape(world) {
     const tower = new THREE.Mesh(
       new THREE.BoxGeometry(0.2 + Math.random() * 0.36, height, 0.3),
       new THREE.MeshStandardMaterial({
-        color: CREAM,
-        emissive: CREAM,
+        color: index % 3 === 0 ? GOLD : SAGE,
+        emissive: index % 3 === 0 ? GOLD : SAGE,
         emissiveIntensity: 0.16,
         transparent: true,
         opacity: 0.38 + Math.random() * 0.35,
@@ -217,8 +219,8 @@ export default function CinematicCanvas() {
     renderer.toneMappingExposure = 0.88
 
     const scene = new THREE.Scene()
-    scene.background = GREEN
-    scene.fog = new THREE.FogExp2(GREEN, 0.026)
+    scene.background = NIGHT
+    scene.fog = new THREE.FogExp2(NIGHT, 0.026)
 
     const camera = new THREE.PerspectiveCamera(
       54,
@@ -231,7 +233,7 @@ export default function CinematicCanvas() {
     const world = new THREE.Group()
     scene.add(world)
 
-    scene.add(new THREE.HemisphereLight(CREAM, GREEN, 2.2))
+    scene.add(new THREE.HemisphereLight(CREAM, NIGHT, 2.2))
     const keyLight = new THREE.DirectionalLight(CREAM, 4.5)
     keyLight.position.set(-5, 10, 8)
     scene.add(keyLight)

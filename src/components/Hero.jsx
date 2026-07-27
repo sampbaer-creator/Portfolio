@@ -61,7 +61,7 @@ export default function Hero() {
             </a>
           </div>
           <div className="hero-meta">
-            <span>Provo, Utah</span>
+            <span>Pleasant Grove, Utah</span>
             <span>Open to internships</span>
             <span>Scroll to explore ↓</span>
           </div>

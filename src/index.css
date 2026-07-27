@@ -5,11 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --cream: #ffefb3;
+  --cream: #f8f2df;
+  --accent: #ffefb3;
   --green: #013e37;
-  --cream-08: rgba(255, 239, 179, 0.08);
-  --cream-16: rgba(255, 239, 179, 0.16);
-  --cream-72: rgba(255, 239, 179, 0.72);
+  --night: #062f2b;
+  --teal: #0d5c53;
+  --sage: #9db9a9;
+  --gold: #d8ba6a;
+  --cream-08: rgba(248, 242, 223, 0.08);
+  --cream-16: rgba(248, 242, 223, 0.16);
+  --cream-72: rgba(248, 242, 223, 0.72);
   --green-10: rgba(1, 62, 55, 0.1);
   --green-64: rgba(1, 62, 55, 0.64);
   --radius: 1.6rem;
@@ -27,7 +32,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: var(--green);
+  background: var(--night);
   color: var(--cream);
   font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -45,7 +50,7 @@ button:focus-visible {
 }
 
 ::selection {
-  background: var(--cream);
+  background: var(--accent);
   color: var(--green);
 }
 
@@ -62,7 +67,7 @@ button:focus-visible {
   display: block;
   width: 100vw;
   height: 100vh;
-  background: var(--green);
+  background: var(--night);
   transition: opacity 300ms ease;
 }
 
@@ -92,8 +97,8 @@ button:focus-visible {
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(1, 62, 55, 0.56), transparent 52%),
-    radial-gradient(circle at 50% 45%, transparent 20%, rgba(1, 62, 55, 0.3) 100%);
+    linear-gradient(90deg, rgba(6, 47, 43, 0.38), transparent 56%),
+    radial-gradient(circle at 50% 45%, transparent 28%, rgba(6, 47, 43, 0.2) 100%);
 }
 
 .container {
@@ -102,7 +107,7 @@ button:focus-visible {
 
 /* Loading */
 .loading-screen {
-  background: var(--green);
+  background: var(--night);
   color: var(--cream);
 }
 
@@ -182,7 +187,7 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   transform-origin: left;
-  background: var(--cream);
+  background: var(--accent);
   box-shadow: 0 0 18px rgba(255, 239, 179, 0.55);
 }
 
@@ -191,7 +196,7 @@ button:focus-visible {
   min-height: 4.2rem;
   border: 1px solid var(--cream-16);
   border-radius: 999px;
-  background: rgba(1, 62, 55, 0.36);
+  background: rgba(6, 47, 43, 0.5);
   box-shadow: 0 18px 54px rgba(1, 62, 55, 0.24);
   backdrop-filter: blur(18px) saturate(120%);
   transition: background 300ms ease, border-color 300ms ease;
@@ -199,7 +204,7 @@ button:focus-visible {
 
 .nav-pill.is-scrolled {
   border-color: rgba(255, 239, 179, 0.28);
-  background: rgba(1, 62, 55, 0.78);
+  background: rgba(6, 47, 43, 0.82);
 }
 
 .logo-mark {
@@ -207,7 +212,7 @@ button:focus-visible {
   width: 2.7rem;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid var(--cream-72);
+  border: 1px solid var(--accent);
   border-radius: 50%;
   color: var(--cream);
   font-family: "DM Mono", monospace;
@@ -216,7 +221,7 @@ button:focus-visible {
 }
 
 .logo-mark:hover {
-  background: var(--cream);
+  background: var(--accent);
   color: var(--green);
 }
 
@@ -243,7 +248,7 @@ button:focus-visible {
   padding: 1rem;
   border: 1px solid var(--cream-16);
   border-radius: 1.4rem;
-  background: rgba(1, 62, 55, 0.94);
+  background: rgba(6, 47, 43, 0.96);
   box-shadow: 0 24px 70px rgba(1, 62, 55, 0.4);
   backdrop-filter: blur(20px);
 }
@@ -353,7 +358,7 @@ button:focus-visible {
 }
 
 .btn-primary {
-  background: var(--cream);
+  background: var(--accent);
   color: var(--green);
 }
 
@@ -380,11 +385,11 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(1, 62, 55, 0.78) 0%, rgba(1, 62, 55, 0.25) 58%, transparent 100%);
+  background: linear-gradient(90deg, rgba(6, 47, 43, 0.64) 0%, rgba(6, 47, 43, 0.16) 62%, transparent 100%);
 }
 
 .story-section:nth-of-type(even)::before {
-  background: linear-gradient(270deg, rgba(1, 62, 55, 0.78) 0%, rgba(1, 62, 55, 0.22) 60%, transparent 100%);
+  background: linear-gradient(270deg, rgba(6, 47, 43, 0.64) 0%, rgba(6, 47, 43, 0.14) 62%, transparent 100%);
 }
 
 .compact-section {
@@ -439,7 +444,7 @@ button:focus-visible {
 .stats-strip,
 .contact-grid {
   border: 1px solid rgba(255, 239, 179, 0.22);
-  background: rgba(1, 62, 55, 0.64);
+  background: rgba(6, 47, 43, 0.72);
   color: var(--cream);
   box-shadow: 0 24px 80px rgba(1, 62, 55, 0.28);
   backdrop-filter: blur(20px) saturate(115%);
@@ -462,7 +467,7 @@ button:focus-visible {
   border-radius: var(--radius);
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(0.15) sepia(0.22) hue-rotate(105deg) saturate(0.72);
+  filter: saturate(0.96) contrast(1.02);
   box-shadow: 0 30px 80px rgba(1, 62, 55, 0.35);
 }
 
@@ -504,7 +509,7 @@ button:focus-visible {
 
 .chapter-card:hover {
   transform: translateY(-7px);
-  background: rgba(255, 239, 179, 0.92);
+  background: rgba(248, 242, 223, 0.95);
   color: var(--green);
 }
 
@@ -544,7 +549,7 @@ button:focus-visible {
 }
 
 .project-bento img {
-  filter: grayscale(0.1) sepia(0.22) hue-rotate(105deg) saturate(0.76) contrast(1.06);
+  filter: saturate(0.94) contrast(1.03);
 }
 
 .project-bento p {
@@ -555,8 +560,8 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, transparent 55%, rgba(1, 62, 55, 0.75)),
-    radial-gradient(rgba(255, 239, 179, 0.12) 1px, transparent 1px);
+    linear-gradient(180deg, transparent 65%, rgba(6, 47, 43, 0.34)),
+    radial-gradient(rgba(248, 242, 223, 0.08) 1px, transparent 1px);
   background-size: auto, 5px 5px;
   pointer-events: none;
 }
@@ -566,7 +571,7 @@ button:focus-visible {
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(1, 62, 55, 0.55);
+  background: rgba(6, 47, 43, 0.38);
   opacity: 0;
   transition: opacity 250ms ease;
 }
@@ -648,6 +653,14 @@ button:focus-visible {
 .resume-role p,
 .resume-role span {
   color: var(--cream) !important;
+}
+
+.resume-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 .resume-grid {
@@ -799,7 +812,7 @@ button:focus-visible {
 
   .story-section::before,
   .story-section:nth-of-type(even)::before {
-    background: rgba(1, 62, 55, 0.46);
+    background: rgba(6, 47, 43, 0.36);
   }
 
   .chapter-card {
@@ -850,6 +863,11 @@ button:focus-visible {
 
   .resume-header {
     flex-direction: column;
+  }
+
+  .resume-actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .stage-progress {

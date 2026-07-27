@@ -26,7 +26,7 @@ export default function About() {
               My work is centered on turning messy information into clear dashboards, dependable reports, and practical tools that support better decisions.
             </p>
             <div className="detail-grid">
-              <p><span>Location</span>Provo, Utah</p>
+              <p><span>Location</span>Pleasant Grove, Utah</p>
               <p><span>Email</span>Sampbaer@gmail.com</p>
               <p><span>Phone</span>(346) 546-5647</p>
               <p><span>Looking for</span>Internship opportunities</p>

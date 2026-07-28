@@ -3,10 +3,10 @@ import { FaArrowRight } from 'react-icons/fa'
 const projects = [
   {
     title: 'GridGuard',
-    description: 'A production property due-diligence platform that combines Utah address search, interactive mapping, live NOAA and EIA context, explainable resilience scoring, and printable buyer reports.',
+    description: 'A public-sector planning and property intelligence platform with satellite mapping, official hazard overlays, scenario comparison, explainable risk metrics, and printable reports.',
     stack: ['React', 'Next.js', 'Cloudflare Workers', 'GIS'],
     image: 'GridGuard.png',
-    url: 'https://github.com/sampbaer-creator/GridGuard',
+    url: 'https://gridguard-utah.earthy-moth-6817.chatgpt.site',
   },
   {
     title: 'UVU Women Impact Lab Analysis',

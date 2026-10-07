@@ -7,19 +7,22 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-primary text-white">
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Resume />
-      <Contact />
+      <main id="main" className="container portfolio-layout">
+        <Hero />
+        <div className="portfolio-content">
+          <About />
+          <Resume />
+          <Projects />
+          <Skills />
+          <Contact />
+        </div>
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
-
-export default App

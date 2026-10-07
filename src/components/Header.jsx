@@ -1,69 +1,53 @@
-import { useState } from 'react'
-import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { useEffect, useRef, useState } from 'react'
+import { profile } from '../data/profile'
+
+const sections = [['About', 'about'], ['Experience', 'experience'], ['Projects', 'projects'], ['Contact', 'contact']]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('about')
+  const menuButton = useRef(null)
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Resume', 'Contact']
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId.toLowerCase())
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        setMenuOpen(false)
+        menuButton.current?.focus()
+      }
     }
-    setMenuOpen(false)
-  }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [menuOpen])
+
+  useEffect(() => {
+    const visibleSections = new Set()
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visibleSections.add(entry.target.id)
+        else visibleSections.delete(entry.target.id)
+      }
+      const firstVisible = sections.find(([, id]) => visibleSections.has(id))
+      if (firstVisible) setActiveSection(firstVisible[1])
+    }, { rootMargin: '-90px 0px -45% 0px', threshold: 0 })
+    for (const [, id] of sections) {
+      const section = document.getElementById(id)
+      if (section) observer.observe(section)
+    }
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <header className="fixed w-full bg-secondary bg-opacity-95 backdrop-blur-md z-50 border-b border-slate-700">
-      <div className="container flex justify-between items-center py-4">
-        <div className="text-2xl font-bold text-accent">Samuel</div>
-        
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link}
-              onClick={() => scrollToSection(link)}
-              className="hover:text-accent transition-colors duration-300 text-sm font-medium"
-            >
-              {link}
-            </button>
+    <header className="site-header">
+      <div className="container header-inner">
+        <a href="#home" className="wordmark" onClick={() => setMenuOpen(false)}>SB<span aria-hidden="true"> / </span><span className="wordmark-label">Portfolio</span></a>
+        <button ref={menuButton} className="menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? 'Close' : 'Menu'} <span aria-hidden="true">{menuOpen ? '−' : '+'}</span></button>
+        <nav id="navigation" className={`navigation ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">
+          {sections.map(([label, id]) => (
+            <a key={id} href={`#${id}`} aria-current={activeSection === id ? 'location' : undefined} onClick={() => { setActiveSection(id); setMenuOpen(false) }}>{label}</a>
           ))}
+          <a className="nav-resume" href={profile.resume} download="Samuel_Baer_Resume.pdf">Resume <span aria-hidden="true">↓</span></a>
         </nav>
-
-        {/* Social Links - Desktop */}
-        <div className="hidden md:flex gap-4">
-          <a href="https://linkedin.com/in/samuel-baer-090215287" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-blue-400 transition-colors">
-            <FaLinkedin size={20} />
-          </a>
-          <a href="https://github.com/sampbaer-creator" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-blue-400 transition-colors">
-            <FaGithub size={20} />
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-primary border-t border-slate-700">
-          <div className="container py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <button
-                key={link}
-                onClick={() => scrollToSection(link)}
-                className="text-left hover:text-accent transition-colors text-sm"
-              >
-                {link}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   )
 }

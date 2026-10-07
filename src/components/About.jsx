@@ -1,31 +1,14 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-primary">
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="fade-in">
-            <img 
-               src={`${import.meta.env.BASE_URL}Sam_Profile.PNG`} 
-               alt="Samuel Baer" 
-               className="rounded-lg shadow-lg"
-            />
-          </div>
-          <div className="fade-in">
-            <p className="text-slate-300 mb-4 leading-relaxed">
-                    Motivated Information Systems student with hands-on experience in data analysis, software development, and business operations. Passionate about leveraging technology to improve decision-making through data-driven insights
-            </p>
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              When I&apos;m not coding, you can find me running trails, staying active with sports, and testing new tech outdoors,
-              all while balancing school and personal projects that sharpen my professional skills.
-            </p>
-            <div className="space-y-2">
-              <p className="text-slate-300"><span className="font-bold text-accent">Location:</span> Provo, Utah</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Email:</span> Sampbaer@gmail.com</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Phone:</span> (346) 546-5647</p>
-              <p className="text-slate-300"><span className="font-bold text-accent">Looking for:</span> Internship Opportunities</p>
-            </div>
-          </div>
+    <section id="about" className="section about-section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div className="about-content">
+        <p>I work with SQL, Power BI, and Python to clean data, build reports, and analyze financial and operational performance.</p>
+        <p>I’m a Carrier Relations Analyst Intern at Trucordia and a Business Intelligence & Reporting Services Analyst at Utah Valley University. Outside those roles, I build web applications for personal finance and property risk analysis.</p>
+        <div className="education">
+          <h3>Utah Valley University</h3>
+          <p>B.S. in Information Systems</p>
+          <p className="muted">Expected April 2027 · Orem, Utah</p>
         </div>
       </div>
     </section>

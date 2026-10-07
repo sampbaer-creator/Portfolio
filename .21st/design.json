@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Samuel Baer Portfolio",
+    "productType": "Professional portfolio",
+    "stack": [
+      "React",
+      "Vite",
+      "CSS"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/index.css"
+    ],
+    "components": [],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "background": "#fafafa",
+      "text": "#202328",
+      "accent": "#2455bd"
+    },
+    "typography": {
+      "body": "IBM Plex Sans",
+      "heading": "IBM Plex Sans",
+      "metadata": "IBM Plex Mono"
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "spacious"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    "Resume supplied October 2026 is the content source of truth.",
+    "Light monochrome portfolio with restrained blue links and locally bundled IBM Plex Sans and Mono.",
+    "Desktop uses a sticky identity column and compact work entries; mobile uses a single column.",
+    "Direct factual copy and simple section labels; no marketing slogans.",
+    "Layout inspired by the content hierarchy of Brittany Chiang’s portfolio, with original implementation."
+  ],
+  "evidence": [
+    {
+      "fact": "design.tokens",
+      "source": "src/index.css"
+    }
+  ],
+  "generatedAt": "2026-10-07T16:54:40.748Z"
+}

@@ -1,76 +1,32 @@
-# Samuel's Portfolio
+# Samuel Baer Portfolio
 
-A modern, responsive portfolio website showcasing projects and resume for internship job applications.
+A responsive portfolio built with React and Vite. Content follows Samuel's October 2026 resume, with experience in business intelligence, financial analysis, and application development.
 
-## Features
+## Development
 
-- ✨ Modern, responsive design
-- 🎨 Beautiful UI with Tailwind CSS
-- 📱 Mobile-friendly navigation
-- 📁 Projects showcase with links
-- 📄 Resume/CV section with download
-- 📧 Contact form
-- 🔗 Social media links
-- ⚡ Built with React + Vite for lightning-fast performance
-
-## Quick Start
-
-### Installation
-
-```bash
-npm.cmd install
-```
-
-### Development Server
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-The site will open at `http://localhost:5173`
+Production checks:
 
-### Production Build
-
-```bash
+```sh
+npm run lint
 npm run build
 ```
 
-## Customization
+## Updating content
 
-Replace placeholder text and images in the components with your own information:
+- Resume, contact links, experience, projects, and skills: `src/data/profile.js`
+- Downloadable resume: `public/resume.pdf`
+- Typography, colors, and responsive layout: `src/index.css`
+- Design decisions: `.21st/DESIGN.md`
 
-1. **Personal Info** - Update in `Hero.jsx` and `About.jsx`
-2. **Projects** - Add your projects in `Projects.jsx`
-3. **Skills** - Update in `Skills.jsx`
-4. **Resume** - Update in `Resume.jsx` and create a PDF in `/public/resume.pdf`
-5. **Contact** - Update links in `Contact.jsx` and integrate with EmailJS or Formspree
-6. **Social Links** - Update LinkedIn and GitHub URLs in `Header.jsx`
+IBM Plex Sans and IBM Plex Mono are bundled locally. The desktop layout uses a sticky profile column and compact work entries, drawing on the content hierarchy of [Brittany Chiang's portfolio](https://britchiang.com/) with an original light theme and implementation.
 
-## File Structure
+## Deployment
 
-```
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── Hero.jsx
-│   ├── About.jsx
-│   ├── Skills.jsx
-│   ├── Projects.jsx
-│   ├── Resume.jsx
-│   ├── Contact.jsx
-│   └── Footer.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
-```
+The Vite base path is `/Portfolio/`. GitHub Actions builds changes pushed to `main` and publishes the output to `gh-pages`.
 
-## Technologies
-
-- React 18
-- Vite
-- Tailwind CSS
-- React Icons
-
-## License
-
-This project is open source and available under the MIT License.
+Live site: https://sampbaer-creator.github.io/Portfolio/

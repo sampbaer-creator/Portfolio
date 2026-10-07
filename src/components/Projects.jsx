@@ -1,70 +1,29 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { projects, profile } from '../data/profile'
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Samuel & Kelcee Wedding Website",
-      description: "A wedding website featuring event details, photo gallery, registry, and RSVP functionality for Samuel and Kelcee's special day.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-      github: "",
-      live: "https://samuelkelceewedding.info/",
-      image: "https://samuelkelceewedding.info/images/wedding_1.jpg"
-    },
-    {
-      title: "WeatherControl",
-      description: "Cross-platform .NET MAUI weather app that retrieves current conditions by ZIP code or major city and displays temperature and atmospheric details in a clean UI.",
-      technologies: ["C#", ".NET MAUI", "XAML", "HttpClient", "OpenWeather API", "Newtonsoft.Json"],
-      github: "https://github.com/sampbaer-creator/WeatherControl",
-      live: "",
-      image: `${import.meta.env.BASE_URL}Weather.webp`
-    },
-    {
-      title: "MGMT 3345 Final R Project",
-      description: "Business statistics analysis project using R Markdown, including data analysis, visualizations, and a final written report.",
-      technologies: ["R", "R Markdown", "Statistics", "Data Visualization"],
-      github: "https://github.com/sampbaer-creator/R_Final_Project",
-      live: "",
-      image: `${import.meta.env.BASE_URL}R_photo.webp`
-    }
-  ]
-
   return (
-    <section id="projects" className="py-20 bg-primary">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-secondary rounded-lg overflow-hidden fade-in border border-slate-700 hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-slate-300 text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 bg-slate-700 text-slate-300 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
-                      <FaGithub /> Code
-                    </a>
-                  )}
-                  {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent hover:text-blue-400 transition-colors text-sm">
-                      <FaExternalLinkAlt /> Live
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section id="projects" className="section" aria-labelledby="projects-title">
+      <div className="section-top">
+        <h2 id="projects-title">Projects</h2>
+        <a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
+      <div className="project-list">{projects.map((project) => (
+        <article className="project-row" key={project.title}>
+          <span className="project-number" aria-hidden="true">{project.number}</span>
+          <div className="project-body">
+            <div className="project-heading">
+              <h3>{project.title}</h3>
+            </div>
+            <p className="project-category">{project.category}</p>
+            <p className="project-description">{project.description}</p>
+            <ul className="tech-list" aria-label={`${project.title} technologies`}>{project.technologies.map((tech) => <li key={tech}>{tech}</li>)}</ul>
+            <div className="project-links">
+              {project.live && <a className="text-link" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title}`}>Visit site <span aria-hidden="true">↗</span></a>}
+              {project.github && <a className="text-link" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} code`}>View code <span aria-hidden="true">↗</span></a>}
+            </div>
+          </div>
+        </article>
+      ))}</div>
     </section>
   )
 }
-
-

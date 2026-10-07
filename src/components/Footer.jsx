@@ -1,12 +1,3 @@
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
-  return (
-    <footer className="bg-secondary border-t border-slate-700 py-8">
-      <div className="container text-center text-slate-400 text-sm">
-        <p>© {currentYear} Samuel. All rights reserved.</p>
-        <p className="mt-2">Built with React, Vite & Tailwind CSS</p>
-      </div>
-    </footer>
-  )
+  return <footer className="container footer"><p>© {new Date().getFullYear()} Samuel Baer</p><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
 }

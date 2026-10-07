@@ -16,6 +16,7 @@ export default function Projects() {
             </div>
             <p className="project-category">{project.category}</p>
             <p className="project-description">{project.description}</p>
+            {project.image && <a className="project-preview" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live application`}><img src={`${import.meta.env.BASE_URL}${project.image}`} alt="GridGuard property risk interface with a Utah map and property report panel" width="1200" height="750" loading="lazy" /></a>}
             <ul className="tech-list" aria-label={`${project.title} technologies`}>{project.technologies.map((tech) => <li key={tech}>{tech}</li>)}</ul>
             <div className="project-links">
               {project.live && <a className="text-link" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title}`}>Visit site <span aria-hidden="true">↗</span></a>}

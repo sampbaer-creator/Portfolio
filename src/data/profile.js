@@ -51,6 +51,7 @@ export const projects = [
     technologies: ['Next.js', 'TypeScript', 'FastAPI / Python', 'Leaflet', 'Cloudflare Workers'],
     github: 'https://github.com/sampbaer-creator/GridGuard',
     live: 'https://gridguard-utah.earthy-moth-6817.chatgpt.site',
+    image: 'GridGuard.png',
   },
   {
     number: '03', title: 'Business Statistics Analysis', category: 'UVU Women’s Impact Lab',

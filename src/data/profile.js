@@ -39,14 +39,20 @@ export const experience = [
 
 export const projects = [
   {
-    number: '01', title: 'BaerVault', category: 'Personal finance platform',
+    number: '01', title: 'BridgeWay', category: 'Business referral platform',
+    description: 'BridgeWay helps businesses track and follow up on referrals. Partners share an NFC card or QR code, customers submit a short form, and staff follow up from a dashboard that shows who referred the customer and which office received the request.',
+    technologies: ['Next.js', 'React', 'C# / ASP.NET Core', 'Azure Cosmos DB', 'Microsoft Entra', 'Stripe'],
+    live: 'https://bridgewayrefer.com/',
+  },
+  {
+    number: '02', title: 'BaerVault', category: 'Personal finance platform',
     description: 'A personal finance application for household budgets, cash flow, transactions, and investments. I designed the PostgreSQL data model and built and deployed the application with Next.js and Supabase.',
     technologies: ['Next.js', 'TypeScript', 'React', 'Supabase / PostgreSQL', 'Vercel'],
     github: 'https://github.com/sampbaer-creator/BaerVault',
     live: 'https://www.baervault.company',
   },
   {
-    number: '02', title: 'GridGuard', category: 'Property intelligence',
+    number: '03', title: 'GridGuard', category: 'Property intelligence',
     description: 'A property risk application using geographic and government data to analyze flood, wildfire, wind, and planning scenarios. I integrated external APIs and GIS services with an interactive map.',
     technologies: ['Next.js', 'TypeScript', 'FastAPI / Python', 'Leaflet', 'Cloudflare Workers'],
     github: 'https://github.com/sampbaer-creator/GridGuard',
@@ -54,7 +60,7 @@ export const projects = [
     image: 'GridGuard.png',
   },
   {
-    number: '03', title: 'Business Statistics Analysis', category: 'UVU Women’s Impact Lab',
+    number: '04', title: 'Business Statistics Analysis', category: 'UVU Women’s Impact Lab',
     description: 'Survey analysis for the UVU Women’s Impact Lab. I used R Markdown for regression modeling, hypothesis testing, and visualization, then delivered a report of the findings to the client.',
     technologies: ['R', 'R Markdown', 'Regression', 'Hypothesis testing'],
     github: 'https://github.com/sampbaer-creator/R_Final_Project',

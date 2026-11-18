@@ -69,7 +69,9 @@ export const projects = [
 
 export const skillGroups = [
   { title: 'Languages', skills: 'SQL, Python, R, TypeScript, C#, HTML, CSS' },
-  { title: 'Data & business intelligence', skills: 'Power BI, Tableau, Excel, Microsoft Azure, Azure SQL Database, Snowflake, Supabase / PostgreSQL' },
+  { title: 'Data & business intelligence', skills: 'Power BI, Tableau, Excel, Azure SQL Database, Azure Cosmos DB, Snowflake, Supabase / PostgreSQL' },
   { title: 'Analytics', skills: 'ETL pipelines, data analysis, data validation & quality, financial analysis & forecasting, statistical modeling, data visualization, KPI reporting, data governance (FERPA)' },
-  { title: 'Tools & workflow', skills: 'JIRA, Smartsheet, SharePoint, Confluence, GitHub, Vercel, AI coding agents' },
+  { title: 'Application development', skills: 'React, Next.js, ASP.NET Core, FastAPI, Leaflet' },
+  { title: 'Cloud, deployment & integrations', skills: 'Microsoft Azure, Azure DevOps, Azure Container Apps, GitHub Actions, Vercel, Cloudflare Workers, Microsoft Entra, Stripe' },
+  { title: 'Tools & workflow', skills: 'Claude Code, OpenAI Codex, GitHub, Jira, Smartsheet, SharePoint, Confluence' },
 ]
